@@ -5,8 +5,24 @@ export const theme = createTheme({
         mode: 'light',
         // primary: { main: 'rgb(219, 39, 119)' },
         secondary: { main: '#10b981' },
+        accent: {
+            main: 'rgb(219, 39, 119)'
+        },
     },
     shape: { borderRadius: 12 },
+
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    fontWeight: 900,
+                    textTransform: 'capitalize',
+                    fontSize: '1rem',
+                }
+            }
+
+        },
+    }
 });
 
 

@@ -1,4 +1,5 @@
 import {Stack} from "@mui/material";
+import ProductCard from "../ProductCard/ProductCard.tsx";
 
 interface ProductCardList {
 }
@@ -10,7 +11,7 @@ const flowers = [
         name: 'Mixed Spring Bouquet',
         price: 52.99,
         shop: 'Petals Paradise',
-        imagePath: 'flower_1',
+        imagePath: 'flower_1.jpeg',
         isSingleFlower: true,
         isFavorite: true,
     },
@@ -20,7 +21,7 @@ const flowers = [
         name: 'Pink Tulips',
         price: 23.15,
         shop: 'Garden Delights',
-        imagePath: 'flower_2',
+        imagePath: 'flower_2.webp',
         isSingleFlower: false,
         isFavorite: false,
     },
@@ -30,7 +31,7 @@ const flowers = [
         name: 'Mixed Spring Bouquet',
         price: 9.99,
         shop: 'Petals Paradise',
-        imagePath: 'flower_3',
+        imagePath: 'flower_3.jpeg',
         isSingleFlower: true,
         isFavorite: false,
     },
@@ -40,7 +41,7 @@ const flowers = [
         name: 'Red Rose Bouquet',
         price: 109.50,
         shop: 'Bloom & Blossom',
-        imagePath: 'flower_4',
+        imagePath: 'flower_4.webp',
         isSingleFlower: false,
         isFavorite: true,
     }
@@ -51,8 +52,9 @@ const flowers = [
 export default function ProductCardList({}: ProductCardList) {
 
     return (
-        <Stack>
+        <Stack direction="row" gap={2} flexWrap="wrap">
             {flowers.map(flower => (
+                <ProductCard flower={flower}/>
 
             ))}
         </Stack>
