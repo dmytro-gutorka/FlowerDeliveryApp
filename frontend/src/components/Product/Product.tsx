@@ -2,36 +2,27 @@ import {
   Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
   Chip,
   Stack,
   Typography,
+  CardActions,
   useTheme,
 } from '@mui/material';
 import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import LikeButton from '../LikeButton';
+import type { Flower } from '../../types/types.ts';
 
-interface ProductCard {
-  description: string;
-  name: string;
-  price: number;
-  shop: string;
-  imagePath: string;
-  isBouquet: boolean;
-  isFavorite: boolean;
-}
-
-interface ProductCardProps {
-  flower: ProductCard;
+interface ProductProps {
+  product: Flower;
   cardWidth: number;
   imgHeight: number;
 }
 
-export default function ProductCard({ flower, cardWidth, imgHeight }: ProductCardProps) {
-  const { description, name, price, shop, imagePath, isBouquet, isFavorite } = flower;
+export default function Product({ product, cardWidth, imgHeight }: ProductProps) {
+  const { description, name, price, shop, imagePath, isBouquet, isFavorite } = product;
   const theme = useTheme();
 
   return (

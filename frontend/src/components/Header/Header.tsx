@@ -1,3 +1,4 @@
+import { Button, Container, Stack, useTheme } from '@mui/material';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AppBar from '@mui/material/AppBar';
@@ -6,7 +7,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import FlowerIcon from '../../assets/FlowerIcon';
-import { Button, Container, Stack, useTheme } from '@mui/material';
 
 export default function Header() {
   const cartItems = 1;

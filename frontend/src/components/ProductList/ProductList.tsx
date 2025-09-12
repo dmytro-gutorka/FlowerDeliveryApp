@@ -1,9 +1,8 @@
+import type { Flower } from '../../types/types.ts';
 import { Stack } from '@mui/material';
-import ProductCard from '../ProductCard/ProductCard.tsx';
+import Product from '../Product';
 
-interface ProductCardList {}
-
-const flowers = [
+const products: Flower[] = [
   {
     id: 1,
     description: 'Colorful spring flowers in a stunning arrangement',
@@ -206,11 +205,11 @@ const flowers = [
   },
 ];
 
-export default function ProductCardList() {
+export default function ProductList() {
   return (
     <Stack direction="row" gap={3} flexWrap="wrap">
-      {flowers.map((flower) => (
-        <ProductCard flower={flower} cardWidth={300} imgHeight={220} />
+      {products.map((product: Flower) => (
+        <Product product={product} cardWidth={300} imgHeight={220} />
       ))}
     </Stack>
   );

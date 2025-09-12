@@ -1,5 +1,5 @@
-interface Cart {}
+interface CartProps {}
 
-export default function Cart({}: Cart) {
+export default function Cart({}: CartProps) {
   return <div>Cart</div>;
 }

@@ -30,6 +30,7 @@ export default [
       prettier,
     },
     rules: {
+      '@typescript-eslint/no-unsafe-call': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
