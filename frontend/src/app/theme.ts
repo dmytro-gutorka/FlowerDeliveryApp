@@ -20,6 +20,17 @@ const base = createTheme({
 
 export const theme = createTheme(base, {
   components: {
+    MuiBadge: {
+      styleOverrides: {
+        root: {
+          '& .MuiBadge-badge': {
+            backgroundColor: base.palette.accent,
+            color: 'white',
+          },
+        },
+      },
+    },
+
     MuiButton: {
       defaultProps: {
         variant: 'contained',
@@ -30,15 +41,26 @@ export const theme = createTheme(base, {
             {
               props: { variant: 'contained' },
               style: {
-                // paddingInline: 2,
-                // paddingBlock: 1,
+                backgroundColor: base.palette.accent,
+              },
+            },
+            {
+              props: { variant: 'outlined' },
+              style: {
+                border: `2px solid ${base.palette.accent}`,
+                color: base.palette.accent,
+              },
+            },
+            {
+              props: { variant: 'text' },
+              style: {
+                color: base.palette.common.black,
               },
             },
           ],
           fontWeight: 700,
           textTransform: 'capitalize',
           fontSize: base.typography.pxToRem(16),
-          backgroundColor: base.palette.accent,
           paddingInline: base.spacing(2),
           paddingBlock: base.spacing(1),
         },

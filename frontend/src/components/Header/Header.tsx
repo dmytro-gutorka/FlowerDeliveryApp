@@ -3,11 +3,10 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import FlowerIcon from '../../assets/FlowerIcon';
-import { Container, Stack, useTheme } from '@mui/material';
+import { Button, Container, Stack, useTheme } from '@mui/material';
 
 export default function Header() {
   const cartItems = 1;
@@ -16,12 +15,13 @@ export default function Header() {
   const theme = useTheme();
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" sx={{ backgroundColor: theme.palette.background.paper }}>
       <Container maxWidth="xl">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Stack direction="row" gap={1} alignItems="center" color={theme.palette.accent}>
-            <FlowerIcon fontSize="large" />
+          <Stack direction="row" gap={1} alignItems="center">
+            <FlowerIcon size={32} color={theme.palette.accent} />
             <Typography
+              color={theme.palette.accent}
               variant="h5"
               component="div"
               fontWeight={900}
@@ -33,18 +33,31 @@ export default function Header() {
           </Stack>
           <Stack direction="row" gap={1} alignItems="center">
             <Box>
-              <IconButton size="large" aria-label="Open favorites" color="inherit">
-                <Badge badgeContent={favoriteItems} color="error">
-                  <BookmarkAddOutlinedIcon />
-                </Badge>
-              </IconButton>
+              <Button
+                variant="text"
+                aria-label="Open favorites"
+                startIcon={
+                  <Badge badgeContent={favoriteItems} color="error">
+                    <BookmarkAddOutlinedIcon />
+                  </Badge>
+                }
+              >
+                Favorites
+              </Button>
             </Box>
+
             <Box>
-              <IconButton size="large" aria-label="Open cart" color="inherit">
-                <Badge badgeContent={cartItems} color="error">
-                  <ShoppingCartOutlinedIcon />
-                </Badge>
-              </IconButton>
+              <Button
+                variant="text"
+                aria-label="Open cart"
+                startIcon={
+                  <Badge badgeContent={cartItems}>
+                    <ShoppingCartOutlinedIcon />
+                  </Badge>
+                }
+              >
+                Cart
+              </Button>
             </Box>
           </Stack>
         </Toolbar>
