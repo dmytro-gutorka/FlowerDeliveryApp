@@ -14,6 +14,7 @@ import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import LikeButton from '../LikeButton';
 import type { Flower } from '../../types/types.ts';
+import { useCartStore } from '../../app/store/store.ts';
 
 interface ProductProps {
   product: Flower;
@@ -24,6 +25,11 @@ interface ProductProps {
 export default function Product({ product, cardWidth, imgHeight }: ProductProps) {
   const { description, name, price, shop, imagePath, isBouquet, isFavorite } = product;
   const theme = useTheme();
+
+  const addProductToCart = useCartStore((state) => state.addProduct);
+  const productsSlice = useCartStore((state) => state.products);
+
+  console.log(productsSlice);
 
   return (
     <Card
@@ -60,7 +66,9 @@ export default function Product({ product, cardWidth, imgHeight }: ProductProps)
         <Typography variant="h5" fontWeight={900}>
           ${price}
         </Typography>
-        <Button startIcon={<ShoppingCartOutlinedIcon />}>Add to cart</Button>
+        <Button onClick={() => addProductToCart(product)} startIcon={<ShoppingCartOutlinedIcon />}>
+          Add to cart
+        </Button>
       </CardActions>
 
       <LikeButton isActive={isFavorite} />

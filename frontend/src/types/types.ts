@@ -9,7 +9,8 @@ export interface Flower {
   isFavorite: boolean;
 }
 
-export type FlowerCartItem = Omit<Flower, 'isFavorite' | 'isBouquet' | 'shop'> & {
+export interface CartItem<T> {
+  product: T;
   totalPrice: number;
   quantity: number;
-};
+}

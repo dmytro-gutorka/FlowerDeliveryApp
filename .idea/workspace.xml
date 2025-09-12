@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/eslint.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppLayout/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppLayout/AppLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Product/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCard/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Product/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCardList/ProductCardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductList/ProductList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductCardList/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductList/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartProduct/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartProduct/CartProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartProductList/CartProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartProductList/CartProductList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Product/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Product/Product.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +94,7 @@
       <workItem from="1757673093391" duration="177000" />
       <workItem from="1757673282901" duration="173000" />
       <workItem from="1757673494957" duration="3857000" />
-      <workItem from="1757680335247" duration="8487000" />
+      <workItem from="1757680335247" duration="10881000" />
     </task>
     <servers />
   </component>

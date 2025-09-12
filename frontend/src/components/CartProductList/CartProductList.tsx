@@ -1,12 +1,12 @@
-import { Stack } from '@mui/material';
 import type { FlowerCartItem } from '../../types/types.ts';
+import { Stack } from '@mui/material';
 import CartProduct from '../CartProduct';
 
 const products: FlowerCartItem[] = [
   {
     id: 1,
-    description: 'Colorful spring flowers in a stunning arrangement',
-    name: 'Mixed Spring Bouquet',
+    shop: 'Colorful spring flowers in a stunning arrangement',
+    name: 'Bloom & Blossom',
     price: 52.99,
     imagePath: 'flower_1.jpeg',
     totalPrice: 52.99,
@@ -14,7 +14,7 @@ const products: FlowerCartItem[] = [
   },
   {
     id: 2,
-    description: 'Fresh pink tulips for a touch of elegance',
+    shop: 'Petals Paradise',
     name: 'Pink Tulips',
     price: 23.15,
     imagePath: 'flower_2.webp',
@@ -23,7 +23,7 @@ const products: FlowerCartItem[] = [
   },
   {
     id: 3,
-    description: 'Premium white roses perfect for weddings',
+    shop: 'Premium white roses perfect for weddings',
     name: 'Mixed Spring Bouquet',
     price: 9.99,
     imagePath: 'flower_3.jpeg',
@@ -32,8 +32,8 @@ const products: FlowerCartItem[] = [
   },
   {
     id: 4,
-    description: 'Cheerful yellow daffodils to welcome spring',
-    name: 'Red Rose Bouquet',
+    shop: 'Cheerful yellow daffodils to welcome spring',
+    name: 'Garden Delights',
     price: 109.5,
     imagePath: 'flower_4.webp',
     totalPrice: 145.25,
@@ -41,7 +41,7 @@ const products: FlowerCartItem[] = [
   },
   {
     id: 5,
-    description: 'Beautiful spring Roses ',
+    shop: 'Petals Paradise',
     name: 'Mixed Rose Bouquet',
     price: 77.15,
     imagePath: 'flower_1.jpeg',
