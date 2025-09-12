@@ -7,17 +7,19 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import FlowerIcon from '../../assets/FlowerIcon';
-import { Container, Stack } from '@mui/material';
+import { Container, Stack, useTheme } from '@mui/material';
 
 export default function Header() {
   const cartItems = 1;
   const favoriteItems = 1;
 
+  const theme = useTheme();
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Stack direction="row" gap={1} alignItems="center">
+          <Stack direction="row" gap={1} alignItems="center" color={theme.palette.accent}>
             <FlowerIcon fontSize="large" />
             <Typography
               variant="h5"

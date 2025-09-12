@@ -5,14 +5,14 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Chip,
   Stack,
   Typography,
+  useTheme,
 } from '@mui/material';
-import { theme } from '../../app/theme.ts';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import IconButton from '@mui/material/IconButton';
+import LikeButton from '../LikeButton';
 
 interface ProductCard {
   description: string;
@@ -20,7 +20,7 @@ interface ProductCard {
   price: number;
   shop: string;
   imagePath: string;
-  isSingleFlower: boolean;
+  isBouquet: boolean;
   isFavorite: boolean;
 }
 
@@ -31,7 +31,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ flower, cardWidth, imgHeight }: ProductCardProps) {
-  const { description, name, price, shop, imagePath, isSingleFlower, isFavorite } = flower;
+  const { description, name, price, shop, imagePath, isBouquet, isFavorite } = flower;
+  const theme = useTheme();
 
   return (
     <Card
@@ -41,6 +42,7 @@ export default function ProductCard({ flower, cardWidth, imgHeight }: ProductCar
         justifyContent: 'space-between',
         flexDirection: 'column',
         transition: theme.transitions.create('all'),
+        position: 'relative',
         '&:hover': {
           transform: 'scale(1.05)',
         },
@@ -68,18 +70,23 @@ export default function ProductCard({ flower, cardWidth, imgHeight }: ProductCar
           ${price}
         </Typography>
         <Button startIcon={<ShoppingCartOutlinedIcon />}>Add to cart</Button>
-        <IconButton
-          sx={{
-            backgroundColor: isFavorite ? 'red' : theme.palette.grey.A100,
-            '&:hover .MuiSvgIcon-root': {
-              fill: 'red',
-              stroke: 'red',
-            },
-          }}
-        >
-          <FavoriteBorderIcon color="white" fontSize="medium" />
-        </IconButton>
       </CardActions>
+
+      <LikeButton isActive={isFavorite} />
+
+      {isBouquet && (
+        <Chip
+          label="Bouquet"
+          sx={{
+            position: 'absolute',
+            top: 10,
+            left: 10,
+            backgroundColor: theme.palette.accent,
+            color: theme.palette.common.white,
+            fontWeight: 600,
+          }}
+        />
+      )}
     </Card>
   );
 }
