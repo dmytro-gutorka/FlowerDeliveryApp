@@ -1,3 +1,3 @@
-import FlowerIcon from './FlowerIcon'
+import FlowerIcon from './FlowerIcon';
 
-export default FlowerIcon
+export default FlowerIcon;

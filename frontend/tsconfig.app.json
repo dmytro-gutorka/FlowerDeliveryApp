@@ -24,7 +24,5 @@
     "noUncheckedSideEffectImports": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src", "scripts/**/*.ts", "scripts/**/*.tsx", "vitest.config.ts", "vite.config.ts"]
 }

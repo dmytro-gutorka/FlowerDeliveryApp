@@ -1,3 +1,3 @@
-import Coupons from './Coupons'
+import Coupons from './Coupons';
 
-export default Coupons
+export default Coupons;

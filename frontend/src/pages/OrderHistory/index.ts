@@ -1,3 +1,3 @@
-import OrderHistory from './OrderHistory'
+import OrderHistory from './OrderHistory';
 
-export default OrderHistory
+export default OrderHistory;

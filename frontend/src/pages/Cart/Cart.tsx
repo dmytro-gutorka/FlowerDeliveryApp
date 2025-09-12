@@ -1,6 +1,5 @@
-interface Cart {
-}
+interface Cart {}
 
 export default function Cart({}: Cart) {
-    return (<div>Cart</div>)
+  return <div>Cart</div>;
 }

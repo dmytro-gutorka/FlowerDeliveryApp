@@ -1,3 +1,3 @@
-import Shops from './Shops'
+import Shops from './Shops';
 
-export default Shops
+export default Shops;

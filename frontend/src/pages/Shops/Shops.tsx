@@ -1,6 +1,5 @@
-interface Shops {
-}
+interface Shops {}
 
 export default function Shops({}: Shops) {
-    return (<div>Shops</div>)
+  return <div>Shops</div>;
 }
