@@ -11,7 +11,7 @@ interface CartStoreActions<T> {
 export type CartStore<T extends BaseItem> = {
   items: CartItem<T>[];
   totalPrice: number;
-  totalQuantity: number;
+  subtotalItems: number;
   isCartEmpty: boolean;
   actions: CartStoreActions<T>;
 };

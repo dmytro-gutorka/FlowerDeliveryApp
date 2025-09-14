@@ -11,7 +11,6 @@ import { useNavigate } from 'react-router';
 import { useCartStore } from '../../app/store/cart/store.ts';
 
 export default function Header() {
-  const cartItems = 1;
   const favoriteItems = 1;
 
   const theme = useTheme();

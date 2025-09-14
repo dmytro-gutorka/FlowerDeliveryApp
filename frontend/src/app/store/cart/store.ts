@@ -12,7 +12,7 @@ import {
 export const useCartStore = create<CartStore<BaseItem>>((set) => ({
   items: [],
   totalPrice: 0,
-  totalQuantity: 0,
+  subtotalItems: 0,
   isCartEmpty: true,
   actions: {
     incrementQuantity: (item) => handleIncrementQuantity(item, set),
