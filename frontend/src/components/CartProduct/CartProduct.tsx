@@ -1,23 +1,22 @@
-import type { FlowerCartItem } from '../../types/types.ts';
+import type { FlowerItem } from '../../types/types.ts';
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
+import { Stack } from '@mui/material';
+import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { Stack } from '@mui/material';
 import RemoveIcon from '@mui/icons-material/Remove';
-
+import CardMedia from '@mui/material/CardMedia';
 import AddIcon from '@mui/icons-material/Add';
-import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
 
 interface CartProductProps {
-  product: FlowerCartItem;
+  item: FlowerItem;
 }
 
-export default function CartProduct({ product }: CartProductProps) {
-  const { shop, name, price, imagePath, totalPrice, quantity } = product;
+export default function CartProduct({ item }: CartProductProps) {
+  const { shop, name, price, imagePath } = item;
 
   const theme = useTheme();
 
@@ -54,7 +53,7 @@ export default function CartProduct({ product }: CartProductProps) {
           <IconButton aria-label="decrement product quantity">
             <RemoveIcon />
           </IconButton>
-          <Typography>{quantity}</Typography>
+          {/*<Typography>{quantity}</Typography>*/}
           <IconButton aria-label="increment product quantity">
             <AddIcon />
           </IconButton>

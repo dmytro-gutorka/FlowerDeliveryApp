@@ -1,36 +1,49 @@
+import type { FlowerItem } from '../../types/types.ts';
+import { useCartStore } from '../../app/store/cart/store.ts';
 import {
-  Button,
-  Card,
   CardActionArea,
   CardContent,
-  CardMedia,
-  Chip,
-  Stack,
   Typography,
+  CardMedia,
+  Button,
+  Stack,
+  Chip,
+  Card,
   CardActions,
   useTheme,
 } from '@mui/material';
+import LikeButton from '../LikeButton';
 import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import LikeButton from '../LikeButton';
-import type { Flower } from '../../types/types.ts';
-import { useCartStore } from '../../app/store/store.ts';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import IconButton from '@mui/material/IconButton';
 
 interface ProductProps {
-  product: Flower;
+  item: FlowerItem & {
+    totalPrice?: number;
+    quantity?: number;
+  };
   cardWidth: number;
   imgHeight: number;
 }
 
-export default function Product({ product, cardWidth, imgHeight }: ProductProps) {
-  const { description, name, price, shop, imagePath, isBouquet, isFavorite } = product;
+export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
   const theme = useTheme();
 
-  const addProductToCart = useCartStore((state) => state.addProduct);
-  const productsSlice = useCartStore((state) => state.products);
+  const { description, name, price, shop, imagePath, isBouquet, isFavorite } = item;
+  const { addProduct, incrementQuantity, decrementQuantity } = useCartStore(
+    (state) => state.actions,
+  );
 
-  console.log(productsSlice);
+  const cart = useCartStore((state) => state.items);
 
+  console.log(cart);
+
+  // if (item.id === 1) {
+  //   console.log(item);
+  //   console.log(Boolean(item?.quantity && item?.quantity > 0));
+  // }
   return (
     <Card
       sx={{
@@ -66,13 +79,53 @@ export default function Product({ product, cardWidth, imgHeight }: ProductProps)
         <Typography variant="h5" fontWeight={900}>
           ${price}
         </Typography>
-        <Button onClick={() => addProductToCart(product)} startIcon={<ShoppingCartOutlinedIcon />}>
-          Add to cart
-        </Button>
+        {Boolean(!item?.quantity || item.quantity === 0) && (
+          <Button startIcon={<ShoppingCartOutlinedIcon />} onClick={() => addProduct(item)}>
+            Add to cart
+          </Button>
+        )}
+
+        {Boolean(item?.quantity && item?.quantity > 0) && (
+          <Stack
+            minWidth="147px"
+            direction="row"
+            alignItems="center"
+            borderRadius={1}
+            pb={0.5}
+            sx={{ backgroundColor: theme.palette.accent }}
+          >
+            <IconButton onClick={() => decrementQuantity(item)} sx={{ color: 'white' }}>
+              <RemoveIcon />
+            </IconButton>
+            <Typography color={theme.palette.common.white} fontWeight={700}>
+              {item.quantity} items
+            </Typography>
+
+            <IconButton onClick={() => incrementQuantity(item)} sx={{ color: 'white' }}>
+              <AddIcon />
+            </IconButton>
+          </Stack>
+        )}
+
+        {/*{item?.quantity && (*/}
+        {/*  <Button*/}
+        {/*    sx={{ padding: 0, paddingInline: 0.5 }}*/}
+        {/*    startIcon={*/}
+        {/*      <IconButton onClick={() => decrementQuantity(item)} sx={{ color: 'white' }}>*/}
+        {/*        <RemoveIcon />*/}
+        {/*      </IconButton>*/}
+        {/*    }*/}
+        {/*    endIcon={*/}
+        {/*      <IconButton onClick={() => incrementQuantity(item)} sx={{ color: 'white' }}>*/}
+        {/*        <AddIcon />*/}
+        {/*      </IconButton>*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {item.quantity} item*/}
+        {/*  </Button>*/}
+        {/*)}*/}
       </CardActions>
-
       <LikeButton isActive={isFavorite} />
-
       {isBouquet && (
         <Chip
           label="Bouquet"

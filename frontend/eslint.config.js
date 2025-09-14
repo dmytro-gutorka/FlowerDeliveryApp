@@ -10,7 +10,7 @@ export default [
 
   js.configs.recommended,
 
-  ...tseslint.configs.recommendedTypeChecked.map(cfg => ({
+  ...tseslint.configs.recommendedTypeChecked.map((cfg) => ({
     ...cfg,
     files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
@@ -30,6 +30,8 @@ export default [
       prettier,
     },
     rules: {
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
       '@typescript-eslint/no-unsafe-call': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'react-hooks/rules-of-hooks': 'error',

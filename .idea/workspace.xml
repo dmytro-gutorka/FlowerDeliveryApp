@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/store/cart/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/eslint.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/store.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/CartProduct/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartProduct/CartProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartProductList/CartProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartProductList/CartProductList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Product/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Product/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductList/ProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductList/ProductList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +69,7 @@
       <recent name="$PROJECT_DIR$/backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/app/store/cart" />
       <recent name="$PROJECT_DIR$/frontend/src/app" />
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
@@ -94,7 +96,8 @@
       <workItem from="1757673093391" duration="177000" />
       <workItem from="1757673282901" duration="173000" />
       <workItem from="1757673494957" duration="3857000" />
-      <workItem from="1757680335247" duration="10881000" />
+      <workItem from="1757680335247" duration="11558000" />
+      <workItem from="1757853116136" duration="12288000" />
     </task>
     <servers />
   </component>
