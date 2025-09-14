@@ -13,7 +13,7 @@ export interface FlowerItem extends BaseItem {
 }
 
 export type CartItem<T> = T & {
-  totalPrice: number;
+  lineTotal: number;
   quantity: number;
 };
 
