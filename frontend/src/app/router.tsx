@@ -11,12 +11,12 @@ export const router = createBrowserRouter([
     path: '/',
     Component: AppLayout,
     children: [
+      // {
+      //   index: true,
+      //   Component: Shops,
+      // },
       {
         index: true,
-        Component: Shops,
-      },
-      {
-        path: '/products',
         Component: ProductCardList,
       },
       {

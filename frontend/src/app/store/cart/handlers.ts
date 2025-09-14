@@ -13,14 +13,7 @@ export function handleIncrementQuantity(item: CartItem<BaseItem>, set) {
 }
 
 export function handleDecrementQuantity(item: CartItem<BaseItem>, set) {
-  if (item.quantity === 1) {
-    console.log('decrement quantity');
-    set((state: CartStore<BaseItem>) => ({
-      items: state.items.filter((ci) => ci.id !== item.id),
-    }));
-
-    return;
-  }
+  if (item.quantity === 1) return handleRemoveItem(item, set);
 
   set((state: CartStore<BaseItem>) => ({
     items: state.items.map((ci) => {

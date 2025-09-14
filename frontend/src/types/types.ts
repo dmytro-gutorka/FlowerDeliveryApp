@@ -17,4 +17,4 @@ export type CartItem<T> = T & {
   quantity: number;
 };
 
-// export type FlowerCartItem = CartItem<Flower>;
+export type FlowerCartItem = CartItem<FlowerItem>;

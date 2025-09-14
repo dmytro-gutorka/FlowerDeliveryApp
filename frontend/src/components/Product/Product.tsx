@@ -36,14 +36,6 @@ export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
     (state) => state.actions,
   );
 
-  const cart = useCartStore((state) => state.items);
-
-  console.log(cart);
-
-  // if (item.id === 1) {
-  //   console.log(item);
-  //   console.log(Boolean(item?.quantity && item?.quantity > 0));
-  // }
   return (
     <Card
       sx={{
@@ -87,43 +79,25 @@ export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
 
         {Boolean(item?.quantity && item?.quantity > 0) && (
           <Stack
-            minWidth="147px"
-            direction="row"
-            alignItems="center"
+            minWidth={theme.spacing(18)}
+            bgcolor={theme.palette.accent}
             borderRadius={1}
             pb={0.5}
-            sx={{ backgroundColor: theme.palette.accent }}
           >
-            <IconButton onClick={() => decrementQuantity(item)} sx={{ color: 'white' }}>
-              <RemoveIcon />
-            </IconButton>
-            <Typography color={theme.palette.common.white} fontWeight={700}>
-              {item.quantity} items
-            </Typography>
+            <Stack direction="row" alignItems="center" alignSelf="center" justifySelf="center">
+              <IconButton onClick={() => decrementQuantity(item)} sx={{ color: 'white' }}>
+                <RemoveIcon />
+              </IconButton>
+              <Typography color={theme.palette.common.white} fontWeight={700}>
+                {item.quantity} items
+              </Typography>
 
-            <IconButton onClick={() => incrementQuantity(item)} sx={{ color: 'white' }}>
-              <AddIcon />
-            </IconButton>
+              <IconButton onClick={() => incrementQuantity(item)} sx={{ color: 'white' }}>
+                <AddIcon />
+              </IconButton>
+            </Stack>
           </Stack>
         )}
-
-        {/*{item?.quantity && (*/}
-        {/*  <Button*/}
-        {/*    sx={{ padding: 0, paddingInline: 0.5 }}*/}
-        {/*    startIcon={*/}
-        {/*      <IconButton onClick={() => decrementQuantity(item)} sx={{ color: 'white' }}>*/}
-        {/*        <RemoveIcon />*/}
-        {/*      </IconButton>*/}
-        {/*    }*/}
-        {/*    endIcon={*/}
-        {/*      <IconButton onClick={() => incrementQuantity(item)} sx={{ color: 'white' }}>*/}
-        {/*        <AddIcon />*/}
-        {/*      </IconButton>*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {item.quantity} item*/}
-        {/*  </Button>*/}
-        {/*)}*/}
       </CardActions>
       <LikeButton isActive={isFavorite} />
       {isBouquet && (

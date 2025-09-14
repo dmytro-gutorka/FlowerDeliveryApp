@@ -1,4 +1,4 @@
-import type { FlowerItem } from '../../types/types.ts';
+import type { FlowerCartItem, FlowerItem } from '../../types/types.ts';
 import { useTheme } from '@mui/material/styles';
 import { Stack } from '@mui/material';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
@@ -12,7 +12,7 @@ import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 
 interface CartProductProps {
-  item: FlowerItem;
+  item: FlowerCartItem;
 }
 
 export default function CartProduct({ item }: CartProductProps) {
