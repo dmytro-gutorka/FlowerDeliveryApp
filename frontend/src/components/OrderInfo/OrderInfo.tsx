@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 export default function OrderInfo() {
   const totalPrice = useCartStore((state) => state.totalPrice);
   const subtotalItems = useCartStore((state) => state.subtotalItems);
+  const totalItems = useCartStore((state) => state.totalItems);
+
   return (
     <>
       <Divider sx={{ marginTop: 4 }} />
@@ -14,6 +16,11 @@ export default function OrderInfo() {
         </Typography>
         <Stack direction="row" justifyContent="space-between" mb={0.5}>
           <Typography>Total items</Typography>
+          <Typography> {totalItems}</Typography>
+        </Stack>
+
+        <Stack direction="row" justifyContent="space-between" mb={0.5}>
+          <Typography>Subtotal items</Typography>
           <Typography> {subtotalItems}</Typography>
         </Stack>
 
@@ -29,7 +36,7 @@ export default function OrderInfo() {
             Total
           </Typography>
           <Typography variant="body1" fontWeight={700}>
-            ${totalPrice}
+            ${totalPrice.toFixed(2)}
           </Typography>
         </Stack>
       </Stack>

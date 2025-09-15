@@ -12,6 +12,7 @@ import {
 export const useCartStore = create<CartStore<BaseItem>>((set) => ({
   items: [],
   totalPrice: 0,
+  totalItems: 0,
   subtotalItems: 0,
   isCartEmpty: true,
   actions: {

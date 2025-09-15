@@ -3,6 +3,8 @@ import type { CartStore } from './types.ts';
 
 export function handleIncrementQuantity(item: CartItem<BaseItem>, set) {
   set((state: CartStore<BaseItem>) => ({
+    subtotalItems: state.subtotalItems + 1,
+    totalPrice: state.totalPrice + item.price,
     items: state.items.map((ci) => {
       const newQuantity = ci.quantity + 1;
       return ci.id === item.id
@@ -16,6 +18,8 @@ export function handleDecrementQuantity(item: CartItem<BaseItem>, set) {
   if (item.quantity <= 1) return handleRemoveItem(item, set);
 
   set((state: CartStore<BaseItem>) => ({
+    subtotalItems: state.subtotalItems - 1,
+    totalPrice: state.totalPrice - item.price,
     items: state.items.map((ci) => {
       const newQuantity = ci.quantity - 1;
       return ci.id === item.id
@@ -27,17 +31,21 @@ export function handleDecrementQuantity(item: CartItem<BaseItem>, set) {
 
 export function handleAddItem(item: CartItem<BaseItem>, set) {
   set((state: CartStore<BaseItem>) => ({
-    items: [...state.items, { ...item, quantity: 1, lineTotal: item.price }],
     subtotalItems: state.subtotalItems + 1,
+    totalPrice: state.totalPrice + item.price,
+    totalItems: state.totalItems + 1,
     isCartEmpty: false,
+    items: [...state.items, { ...item, quantity: 1, lineTotal: item.price }],
   }));
 }
 
 export function handleRemoveItem(item: CartItem<BaseItem>, set) {
   set((state: CartStore<BaseItem>) => ({
-    items: state.items.filter((ci) => ci.id !== item.id),
-    subtotalItems: state.subtotalItems - 1,
+    subtotalItems: state.subtotalItems - item.quantity,
+    totalPrice: state.totalPrice - item.price * item.quantity,
+    totalItems: state.totalItems - 1,
     isCartEmpty: state.items.length <= 1,
+    items: state.items.filter((ci) => ci.id !== item.id),
   }));
 }
 
@@ -46,5 +54,7 @@ export function handleClearCart(set) {
     items: [],
     isCartEmpty: true,
     subtotalItems: 0,
+    totalItems: 0,
+    totalPrice: 0,
   }));
 }

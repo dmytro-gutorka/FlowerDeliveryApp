@@ -1,11 +1,11 @@
 export interface BaseItem {
   id: number;
   name: string;
-  description: string;
-  price: number;
   shop?: string;
+  price: number;
   imagePath?: string;
   isFavorite: boolean;
+  description: string;
 }
 
 export interface FlowerItem extends BaseItem {
