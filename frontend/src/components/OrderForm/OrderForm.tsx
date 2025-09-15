@@ -5,23 +5,24 @@ import { z } from 'zod';
 import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
 import Typography from '@mui/material/Typography';
 import OrderInfo from '../OrderInfo';
+import Box from '@mui/material/Box';
 
 const orderShema = z.object({
   fullName: z
     .string()
-    .min(2, 'Your name should be longer than 2 character')
-    .max(50, 'Your name should not exceed 50 characters'),
+    .min(2, 'Your name should be longer than 2 character.')
+    .max(50, 'Your name should not exceed 50 characters.'),
   email: z.email('Invalid email address.'),
   phoneNumber: z
     .string()
     .regex(
       /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/,
-      'You number is invalid',
+      'Invalid phone number address.',
     ),
   deliveryAddress: z
     .string()
-    .min(10, 'Your address should be longer than 10 characters')
-    .max(255, 'Your address should not exceed 255 characters'),
+    .min(10, 'Your address should be longer than 10 characters.')
+    .max(255, 'Your address should not exceed 255 characters.'),
 });
 
 type OrderFormInputs = z.infer<typeof orderShema>;
@@ -46,16 +47,17 @@ export function OrderForm() {
   const theme = useTheme();
 
   return (
-    <Stack
+    <Box
+      component="form"
       minWidth={theme.spacing(30)}
       borderRadius={theme.shape.borderRadiusScale.sm}
       boxShadow={1}
       p={2.5}
     >
-      <Typography variant="h6" component="h2" fontWeight={700} mb={2}>
-        Delivery Information
-      </Typography>
-      <Stack id="orderForm" component="form" onSubmit={handleSubmit(onSubmit)} gap={2}>
+      <Stack component="fieldset" onSubmit={handleSubmit(onSubmit)} gap={2} border={0} p={0} m={0}>
+        <Typography variant="h6" component="legend" fontWeight={700} mb={2}>
+          Delivery Information
+        </Typography>
         <Controller
           name="fullName"
           control={control}
@@ -132,6 +134,6 @@ export function OrderForm() {
           * All fields are required
         </Typography>
       </Stack>
-    </Stack>
+    </Box>
   );
 }

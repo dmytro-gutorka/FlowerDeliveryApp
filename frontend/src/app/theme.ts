@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material';
 
 const base = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
     accent: 'rgb(219, 39, 119)',
   },
   shape: {
