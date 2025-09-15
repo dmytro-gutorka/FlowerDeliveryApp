@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/cart/handlers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/cart/handlers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/cart/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/cart/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/cart/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/cart/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderInfo/OrderInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderInfo/OrderInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +93,7 @@
       <workItem from="1757680335247" duration="11558000" />
       <workItem from="1757853116136" duration="14770000" />
       <workItem from="1757879200589" duration="4907000" />
-      <workItem from="1757931186634" duration="13083000" />
+      <workItem from="1757931186634" duration="14070000" />
     </task>
     <servers />
   </component>
