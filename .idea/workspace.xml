@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Cart/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderForm/OrderForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderForm/OrderForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderInfo/OrderInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderInfo/OrderInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="JSX Component Folder.tsx.child.0" />
         <option value="JSX Component Folder" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -93,7 +97,7 @@
       <workItem from="1757680335247" duration="11558000" />
       <workItem from="1757853116136" duration="14770000" />
       <workItem from="1757879200589" duration="4907000" />
-      <workItem from="1757931186634" duration="14070000" />
+      <workItem from="1757931186634" duration="19074000" />
     </task>
     <servers />
   </component>

@@ -1,16 +1,24 @@
 import { Divider, Stack } from '@mui/material';
 import { useCartStore } from '../../app/store/cart/store.ts';
 import Typography from '@mui/material/Typography';
+import { useShallow } from 'zustand/shallow';
+import getFormatedCurrency from '../../utils/getFormatedCurrency.ts';
 
 export default function OrderInfo() {
-  const totalPrice = useCartStore((state) => state.totalPrice);
-  const subtotalItems = useCartStore((state) => state.subtotalItems);
-  const totalItems = useCartStore((state) => state.totalItems);
+  const { totalPrice, subtotalItems, totalItems } = useCartStore(
+    useShallow((s) => ({
+      totalPrice: s.totalPrice,
+      subtotalItems: s.subtotalItems,
+      totalItems: s.totalItems,
+    })),
+  );
+
+  const totalPriceWithCurrency = getFormatedCurrency(totalPrice);
 
   return (
     <>
-      <Divider sx={{ marginTop: 4 }} />
-      <Stack marginBlock={2}>
+      <Divider sx={{ marginTop: 2 }} />
+      <Stack>
         <Typography variant="body1" fontWeight={700} mb={1}>
           Order Summary
         </Typography>
@@ -25,18 +33,18 @@ export default function OrderInfo() {
         </Stack>
 
         <Stack direction="row" justifyContent="space-between">
-          <Typography>Delivery Fee: </Typography>
-          <Typography>Free </Typography>
+          <Typography>Delivery Fee:</Typography>
+          <Typography>Free</Typography>
         </Stack>
 
         <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
 
-        <Stack direction="row" justifyContent="space-between">
+        <Stack direction="row" justifyContent="space-between" aria-live="polite" aria-atomic="true">
           <Typography variant="body1" fontWeight={700}>
             Total
           </Typography>
           <Typography variant="body1" fontWeight={700}>
-            ${totalPrice.toFixed(2)}
+            {totalPriceWithCurrency}
           </Typography>
         </Stack>
       </Stack>

@@ -1,16 +1,39 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Stack, TextField } from '@mui/material';
-import { theme } from '../../app/theme.ts';
+import { Button, Stack, TextField, useTheme } from '@mui/material';
+import { z } from 'zod';
 import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
 import Typography from '@mui/material/Typography';
 import OrderInfo from '../OrderInfo';
+
+const orderShema = z.object({
+  fullName: z
+    .string()
+    .min(2, 'Your name should be longer than 2 character')
+    .max(50, 'Your name should not exceed 50 characters'),
+  email: z.email('Invalid email address.'),
+  phoneNumber: z
+    .string()
+    .regex(
+      /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/,
+      'You number is invalid',
+    ),
+  deliveryAddress: z
+    .string()
+    .min(10, 'Your address should be longer than 10 characters')
+    .max(255, 'Your address should not exceed 255 characters'),
+});
+
+type OrderFormInputs = z.infer<typeof orderShema>;
 
 export function OrderForm() {
   const {
     control,
     handleSubmit,
-    formState: { errors },
-  } = useForm({
+    formState: { errors, isDirty, isValid },
+  } = useForm<OrderFormInputs>({
+    resolver: zodResolver(orderShema),
+    mode: 'onChange',
     defaultValues: {
       fullName: '',
       email: '',
@@ -19,9 +42,8 @@ export function OrderForm() {
     },
   });
 
-  const onSubmit = (data) => console.log(data);
-
-  const isValidationErrors: boolean = Object.entries(errors).length > 0;
+  const onSubmit = (data: OrderFormInputs) => console.log(data);
+  const theme = useTheme();
 
   return (
     <Stack
@@ -30,7 +52,7 @@ export function OrderForm() {
       boxShadow={1}
       p={2.5}
     >
-      <Typography variant="h6" fontWeight={700} mb={2}>
+      <Typography variant="h6" component="h2" fontWeight={700} mb={2}>
         Delivery Information
       </Typography>
       <Stack id="orderForm" component="form" onSubmit={handleSubmit(onSubmit)} gap={2}>
@@ -38,21 +60,43 @@ export function OrderForm() {
           name="fullName"
           control={control}
           render={({ field }) => (
-            <TextField {...field} label="Full Name" error={Boolean(errors.fullName)} />
+            <TextField
+              {...field}
+              label="Full Name"
+              type="text"
+              autoComplete="name"
+              helperText={errors.fullName?.message}
+              error={Boolean(errors.fullName)}
+            />
           )}
         />
         <Controller
           name="email"
           control={control}
           render={({ field }) => (
-            <TextField {...field} label="Email" error={Boolean(errors.email)} />
+            <TextField
+              {...field}
+              label="Email"
+              type="email"
+              autoComplete="email"
+              helperText={errors.email?.message}
+              error={Boolean(errors.email)}
+            />
           )}
         />
         <Controller
           name="phoneNumber"
           control={control}
           render={({ field }) => (
-            <TextField {...field} label="Phone Number" error={Boolean(errors.phoneNumber)} />
+            <TextField
+              {...field}
+              label="Phone Number"
+              type="tel"
+              autoComplete="tel"
+              inputMode="tel"
+              helperText={errors.phoneNumber?.message}
+              error={Boolean(errors.phoneNumber)}
+            />
           )}
         />
         <Controller
@@ -61,32 +105,33 @@ export function OrderForm() {
           render={({ field }) => (
             <TextField
               {...field}
-              label="Delivery Adress"
+              label="Delivery Address"
+              autoComplete="shipping street-address"
               multiline
               minRows={3}
+              helperText={errors.deliveryAddress?.message}
               error={Boolean(errors.deliveryAddress)}
             />
           )}
         />
+        <OrderInfo />
+        <Button
+          type="submit"
+          disabled={!isValid || !isDirty}
+          startIcon={<CreditCardOutlinedIcon />}
+        >
+          Create Order
+        </Button>
+        <Typography
+          variant="body2"
+          color={theme.palette.grey[600]}
+          fontSize={theme.spacing(1.5)}
+          align="center"
+          mt={1}
+        >
+          * All fields are required
+        </Typography>
       </Stack>
-      <OrderInfo />
-      <Button
-        type="submit"
-        form="orderForm"
-        disabled={isValidationErrors}
-        startIcon={<CreditCardOutlinedIcon />}
-      >
-        Create Order
-      </Button>
-      <Typography
-        variant="body2"
-        color={theme.palette.grey[600]}
-        fontSize={theme.spacing(1.5)}
-        align="center"
-        mt={1}
-      >
-        * All fields are required
-      </Typography>
     </Stack>
   );
 }
