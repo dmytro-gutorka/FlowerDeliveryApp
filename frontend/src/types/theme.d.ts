@@ -17,6 +17,7 @@ declare module '@mui/system' {
 }
 
 interface BorderRadius {
+  sm: number;
   md: number;
   lg: number;
   xl: number;

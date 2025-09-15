@@ -1,20 +1,23 @@
-import CartProductList from '../../components/CartProductList';
-import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
-import EmptyCart from '../../components/EmptyCart';
 import { useCartStore } from '../../app/store/cart/store.ts';
+import CartProductList from '../../components/CartProductList';
+import EmptyCart from '../../components/EmptyCart';
+import OrderForm from '../../components/OrderForm';
+import Box from '@mui/material/Box';
 
 export default function Cart() {
   const isCartEmpty = useCartStore((state) => state.isCartEmpty);
-  console.log(isCartEmpty);
 
   return (
     <>
       {!isCartEmpty ? (
-        <Stack>
-          <Typography>Total price:</Typography>
-          <CartProductList />
-          <Typography>Total items:</Typography>
+        <Stack direction="row" gap={6} flexWrap="wrap">
+          <Box flexGrow={1}>
+            <CartProductList />
+          </Box>
+          <Box flexGrow={1}>
+            <OrderForm />
+          </Box>
         </Stack>
       ) : (
         <EmptyCart />

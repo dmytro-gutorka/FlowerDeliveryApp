@@ -85,14 +85,20 @@ export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
             pb={0.5}
           >
             <Stack direction="row" alignItems="center" alignSelf="center" justifySelf="center">
-              <IconButton onClick={() => decrementQuantity(item)} sx={{ color: 'white' }}>
+              <IconButton
+                onClick={() => decrementQuantity(item)}
+                sx={{ color: theme.palette.common.white }}
+              >
                 <RemoveIcon />
               </IconButton>
               <Typography color={theme.palette.common.white} fontWeight={700}>
                 {item.quantity} items
               </Typography>
 
-              <IconButton onClick={() => incrementQuantity(item)} sx={{ color: 'white' }}>
+              <IconButton
+                onClick={() => incrementQuantity(item)}
+                sx={{ color: theme.palette.common.white }}
+              >
                 <AddIcon />
               </IconButton>
             </Stack>

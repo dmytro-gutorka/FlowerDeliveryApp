@@ -8,6 +8,7 @@ const base = createTheme({
   shape: {
     borderRadius: 6,
     borderRadiusScale: {
+      sm: 1,
       md: 4,
       lg: 8,
       xl: 12,
@@ -30,7 +31,6 @@ export const theme = createTheme(base, {
         },
       },
     },
-
     MuiButton: {
       defaultProps: {
         variant: 'contained',
@@ -66,7 +66,40 @@ export const theme = createTheme(base, {
         },
       },
     },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          margin: 0,
+          padding: '0px 0px 0px 0px',
+        },
+      },
+    },
+    // MuiOutlinedInput: {
+    //   styleOverrides: {
+    //     notchedOutline: {
+    //       height: base.spacing(6),
+    //     },
+    //     root: {
+    //       height: base.spacing(5),
+    //       margin: 0,
+    //       padding: '0px 0px 0px 0px',
+    //     },
+    //   },
+    // },
+    // MuiInputBase: {
+    //   styleOverrides: {
+    //     root: {
+    //       margin: 0,
+    //       padding: '0px 0px 0px 0px',
+    //
+    //       '& .MuiInputBase-input': {
+    //         margin: 0,
+    //         paddingInline: base.spacing(1),
+    //       },
+    //     },
+    //   },
+    // },
   },
 });
 
-// rgb(219, 39, 119)
+// MuiInputBase-input
