@@ -1,6 +1,6 @@
 import {prisma} from "../index";
 import { ShopProduct} from '@prisma/client';
-import {OfferWithProduct, OrderItemPartial} from "../types/sharedTypes";
+import {OfferWithProduct, OrderItemPartial} from "../sharedTypes";
 
 export async function loadOffers(offersIds: string[]): Promise<OfferWithProduct[]> {
     const offers: OfferWithProduct[] = await prisma.shopProduct.findMany({

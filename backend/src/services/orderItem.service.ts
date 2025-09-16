@@ -1,5 +1,5 @@
 import {CartItem} from "../controllers/orders.controllers";
-import {OfferWithProduct, OrderItemPartial} from "../types/sharedTypes";
+import {OfferWithProduct, OrderItemPartial} from "../sharedTypes";
 
 export async function getOrderItems(cartItems: CartItem[], offers: OfferWithProduct[]): Promise<OrderItemPartial[]> {
     return cartItems.map(({ quantity, offerId}) => {

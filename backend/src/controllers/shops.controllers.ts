@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { Shop, ShopProduct } from '@prisma/client';
-import {shopService} from "../services/shop.services";
+import { PaginatedResponse, ProductSortBy } from "../sharedTypes";
+import { shopService } from "../services/shop.services";
 
 
 export async function listShops(req: Request, res: Response) {
@@ -12,13 +13,17 @@ export async function listShops(req: Request, res: Response) {
     }
 }
 
+
 export async function listShopProducts(req: Request, res: Response) {
     const {shopId} = req.params;
+    const page: number = Number(req.query.page) || 1;
+    const sortBy: ProductSortBy = req.query.sort as ProductSortBy || 'priceCents.asc';
 
     try {
-        const products: ShopProduct[] = await shopService.listShopProducts(shopId)
+        const products: PaginatedResponse<ShopProduct[]> = await shopService.listShopProducts(shopId, page, sortBy)
         res.status(200).json(products)
     } catch(e) {
         res.status(500).json({message: 'Internal server error'})
     }
 }
+
