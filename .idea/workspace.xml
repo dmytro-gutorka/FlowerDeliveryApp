@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/models/orders.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/models/orders.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/models/products.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/models/products.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/models/shops.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/models/shops.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/orders/shops.routes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/orders/shops.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/prisma/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/seed.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +47,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JavaScript Debug.localhost:5555.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
@@ -82,12 +80,22 @@
       <recent name="$PROJECT_DIR$/backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/src/prisma" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/backend/src" />
       <recent name="$PROJECT_DIR$/frontend/src/app/store/cart" />
       <recent name="$PROJECT_DIR$/frontend/src/app" />
-      <recent name="$PROJECT_DIR$/frontend" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="localhost:5555" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:5555">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.localhost:5555" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -116,7 +124,7 @@
       <workItem from="1757879200589" duration="4907000" />
       <workItem from="1757931186634" duration="25884000" />
       <workItem from="1757975540264" duration="4553000" />
-      <workItem from="1758009823201" duration="11345000" />
+      <workItem from="1758009823201" duration="14324000" />
     </task>
     <servers />
   </component>
