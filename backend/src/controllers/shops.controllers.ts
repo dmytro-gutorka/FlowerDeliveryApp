@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Shop, ShopProduct } from '@prisma/client';
-import {shopService} from "../services/shops.services";
+import {shopService} from "../services/shop.services";
 
 
 export async function listShops(req: Request, res: Response) {

@@ -5,17 +5,17 @@ model Order {
   email   String
   phone   String
   address String
-  lat     String
-  lng     String
+  lat     Int
+  lng     Int
 
-  totalCents          Float
+  totalCents          Int
   clientTz            String
   clientOffsetMinutes Int
 
   shop   Shop   @relation(fields: [shopId], references: [id])
   shopId String
 
-  createdAt DateTime
+  createdAt DateTime @default(now())
 
   items OrderItem[]
 }

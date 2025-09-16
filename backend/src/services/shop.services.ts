@@ -2,7 +2,7 @@ import { Shop, ShopProduct } from '@prisma/client';
 import {prisma} from "../index";
 
 
-class ShopsServices {
+class ShopServices {
 
     async listShops(): Promise<Shop[]> {
         return prisma.shop.findMany();
@@ -16,5 +16,4 @@ class ShopsServices {
     }
 }
 
-
-export const shopService = new ShopsServices();
+export const shopService = new ShopServices();

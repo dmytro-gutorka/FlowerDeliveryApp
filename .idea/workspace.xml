@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/orders.controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/orders.controllers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/controllers/shops.controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/shops.controllers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/shops.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/shops.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/prisma/models/orderItem.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/models/orderItem.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/prisma/models/orders.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/models/orders.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/orders.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/orders.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/orders.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/order.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/shops.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/shop.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/types/sharedTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/types/sharedTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,36 +52,36 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortKey" value="BY_TIME_ASCENDING" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "JavaScript Debug.localhost:5555.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore_missing_gitignore": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/dima/GitHubProjects/FlowerDeliveryApp/frontend/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/dima/GitHubProjects/FlowerDeliveryApp/frontend/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/dima/GitHubProjects/FlowerDeliveryApp/frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;JavaScript Debug.localhost:5555.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dima/GitHubProjects/FlowerDeliveryApp/frontend/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/dima/GitHubProjects/FlowerDeliveryApp/frontend/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/dima/GitHubProjects/FlowerDeliveryApp/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public" />
@@ -123,7 +132,11 @@
       <workItem from="1757879200589" duration="4907000" />
       <workItem from="1757931186634" duration="25884000" />
       <workItem from="1757975540264" duration="4553000" />
-      <workItem from="1758009823201" duration="15582000" />
+      <workItem from="1758009823201" duration="18527000" />
+      <workItem from="1758045912950" duration="8411000" />
+      <workItem from="1758054367040" duration="796000" />
+      <workItem from="1758055179346" duration="114000" />
+      <workItem from="1758055307820" duration="129000" />
     </task>
     <servers />
   </component>

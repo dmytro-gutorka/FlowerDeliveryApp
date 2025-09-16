@@ -7,6 +7,7 @@ model OrderItem {
   offer   ShopProduct @relation(fields: [offerId], references: [id])
   offerId String
 
+  imageSnapshot String
   titleSnapshot String
   quantity      Int
   priceCents    Int
