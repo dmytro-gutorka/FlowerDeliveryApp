@@ -1,5 +1,21 @@
 model Order {
-  id Int @id @default(autoincrement())
-  email String
-  phoneNumber String
+  id       String @id @default(uuid(4))
+  orderUid String
+
+  email   String
+  phone   String
+  address String
+  lat     String
+  lng     String
+
+  totalCents          Float
+  clientTz            String
+  clientOffsetMinutes Int
+
+  shop   Shop   @relation(fields: [shopId], references: [id])
+  shopId String
+
+  createdAt DateTime
+
+  items OrderItem[]
 }

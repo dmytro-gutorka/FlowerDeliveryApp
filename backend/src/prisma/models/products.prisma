@@ -1,9 +1,17 @@
+enum ProductType {
+  BOUQUET       @map("bouquet")
+  SINGLE_FLOWER @map("single_flower")
+}
+
 model Product {
-  id Int @id @default(autoincrement())
-  name String
+  id String @id @default(uuid(4))
+
   description String
-  imagePath String
-  isAvaliable Boolean
-  price Float
-  quantityLeft Int
+  imagePath   String
+  title       String
+  type        ProductType
+
+  offers ShopProduct[]
+
+  createdAt DateTime @default(now())
 }

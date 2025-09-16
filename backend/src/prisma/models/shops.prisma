@@ -1,6 +1,13 @@
 model Shop {
-  id Int @id @default(autoincrement())
-  name String
+  id String @id @default(uuid(4))
+
+  name    String
   address String
-  isOpen Boolean
+  lat     String
+  lan     String
+
+  offers ShopProduct[]
+  orders Order[]
+
+  createdAt DateTime @default(now())
 }

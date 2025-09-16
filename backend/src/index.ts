@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { PrismaClient } from "@prisma/client";
+import {PrismaClient, ProductType} from "@prisma/client";
 import express from "express";
 
 const app = express();
@@ -11,12 +11,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
-  const order = await prisma.order.create({
-    data: { email: "aaaa", phoneNumber: "1111" },
-  });
-
-  console.log(order);
-
   res.send("Hello World!");
 });
 
