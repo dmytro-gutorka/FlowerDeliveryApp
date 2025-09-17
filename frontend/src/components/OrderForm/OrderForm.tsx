@@ -4,25 +4,36 @@ import { Button, Stack, TextField, useTheme } from '@mui/material';
 import { z } from 'zod';
 import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
 import Typography from '@mui/material/Typography';
-import OrderInfo from '../OrderInfo';
 import Box from '@mui/material/Box';
+import OrderInfo from '../OrderInfo';
+
+export const CartItem = z.object({
+  offerId: z.uuid(),
+  quantity: z.number().int().min(1),
+});
 
 const orderShema = z.object({
+  shopId: z.uuid(),
   fullName: z
     .string()
     .min(2, 'Your name should be longer than 2 character.')
     .max(50, 'Your name should not exceed 50 characters.'),
   email: z.email('Invalid email address.'),
-  phoneNumber: z
+  phone: z
     .string()
     .regex(
       /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/,
       'Invalid phone number address.',
     ),
-  deliveryAddress: z
+  address: z
     .string()
     .min(10, 'Your address should be longer than 10 characters.')
     .max(255, 'Your address should not exceed 255 characters.'),
+
+  items: z.array(CartItem).min(1),
+  geo: z.object({ lat: z.number(), lng: z.number() }),
+  clientTz: z.string(),
+  clientOffsetMinutes: z.number().int(),
 });
 
 type OrderFormInputs = z.infer<typeof orderShema>;
@@ -31,15 +42,24 @@ export function OrderForm() {
   const {
     control,
     handleSubmit,
+    register,
     formState: { errors, isDirty, isValid },
   } = useForm<OrderFormInputs>({
     resolver: zodResolver(orderShema),
     mode: 'onChange',
     defaultValues: {
+      shopId: '',
       fullName: '',
       email: '',
-      phoneNumber: '',
-      deliveryAddress: '',
+      phone: '',
+      address: '',
+      geo: {
+        lat: 2,
+        lng: 2,
+      },
+      clientTz: '',
+      clientOffsetMinutes: 11,
+      items: [{}, {}],
     },
   });
 
@@ -58,6 +78,12 @@ export function OrderForm() {
         <Typography variant="h6" component="legend" fontWeight={700} mb={2}>
           Delivery Information
         </Typography>
+
+        <input type="hidden" {...register('shopId')} />
+        <input type="hidden" {...register('shopId')} />
+        <input type="hidden" {...register('shopId')} />
+        <input type="hidden" {...register('shopId')} />
+
         <Controller
           name="fullName"
           control={control}
@@ -87,7 +113,7 @@ export function OrderForm() {
           )}
         />
         <Controller
-          name="phoneNumber"
+          name="phone"
           control={control}
           render={({ field }) => (
             <TextField
@@ -96,13 +122,13 @@ export function OrderForm() {
               type="tel"
               autoComplete="tel"
               inputMode="tel"
-              helperText={errors.phoneNumber?.message}
-              error={Boolean(errors.phoneNumber)}
+              helperText={errors.phone?.message}
+              error={Boolean(errors.phone)}
             />
           )}
         />
         <Controller
-          name="deliveryAddress"
+          name="address"
           control={control}
           render={({ field }) => (
             <TextField
@@ -111,8 +137,8 @@ export function OrderForm() {
               autoComplete="shipping street-address"
               multiline
               minRows={3}
-              helperText={errors.deliveryAddress?.message}
-              error={Boolean(errors.deliveryAddress)}
+              helperText={errors.address?.message}
+              error={Boolean(errors.address)}
             />
           )}
         />

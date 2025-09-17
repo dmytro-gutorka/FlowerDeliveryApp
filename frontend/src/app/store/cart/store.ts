@@ -1,5 +1,5 @@
 import type { CartStore } from './types.ts';
-import type { BaseItem } from '../../../types/types.ts';
+import type { ProductItem } from '../../../types/types.ts';
 import { create } from 'zustand';
 import {
   handleAddItem,
@@ -9,7 +9,7 @@ import {
   handleRemoveItem,
 } from './handlers.ts';
 
-export const useCartStore = create<CartStore<BaseItem>>((set) => ({
+export const useCartStore = create<CartStore<ProductItem>>((set) => ({
   items: [],
   totalPrice: 0,
   totalItems: 0,

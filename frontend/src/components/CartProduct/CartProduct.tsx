@@ -1,6 +1,7 @@
-import type { FlowerCartItem, FlowerItem } from '../../types/types.ts';
+import type { CartItem, ProductItem } from '../../types/types.ts';
 import { useTheme } from '@mui/material/styles';
 import { Stack } from '@mui/material';
+import { useCartStore } from '../../app/store/cart/store.ts';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
@@ -9,27 +10,30 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import CardMedia from '@mui/material/CardMedia';
 import AddIcon from '@mui/icons-material/Add';
 import Card from '@mui/material/Card';
-import { useCartStore } from '../../app/store/cart/store.ts';
+import convertCentsToUsd from '../../utils/convertCentsToUsd.ts';
+import getFormatedCurrency from '../../utils/getFormatedCurrency.ts';
 
 interface CartProductProps {
-  item: FlowerCartItem;
+  item: CartItem<ProductItem>;
 }
 
 export default function CartProduct({ item }: CartProductProps) {
-  const { shop, name, price, imagePath, quantity, lineTotal } = item;
+  const { shopName, type, title, imagePath, quantity, lineTotal } = item;
   const { removeProduct, incrementQuantity, decrementQuantity } = useCartStore(
     (state) => state.actions,
   );
   const theme = useTheme();
 
-  console.log(item);
+  const isSingleFlower = type === 'SINGLE_FLOWER';
+  const imgPath = `./${isSingleFlower ? 'single-flower-card-images' : 'bouquet-flower-card-images'}/${imagePath}`;
+  const lineTotalPrice = getFormatedCurrency(convertCentsToUsd(lineTotal));
 
   return (
     <Card sx={{ display: 'flex' }}>
       <CardMedia
         component="img"
-        image={imagePath}
-        alt={name}
+        image={imgPath}
+        alt={title}
         sx={{
           width: 130,
           height: 130,
@@ -41,7 +45,7 @@ export default function CartProduct({ item }: CartProductProps) {
         <Stack direction="row" justifyContent="space-between">
           <Stack>
             <Typography component="div" variant="h6" fontWeight={700}>
-              {name}
+              {title}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -50,27 +54,17 @@ export default function CartProduct({ item }: CartProductProps) {
               color={theme.palette.grey[700]}
               mb={2}
             >
-              {shop}
+              {shopName}
             </Typography>
 
-            <Stack direction="row" alignItems="end" gap={1}>
-              <Typography
-                variant="subtitle1"
-                component="div"
-                color={theme.palette.accent}
-                fontWeight={800}
-              >
-                ${lineTotal.toFixed(2)}
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                component="div"
-                color={theme.palette.accent}
-                fontWeight={800}
-              >
-                (${price} each)
-              </Typography>
-            </Stack>
+            <Typography
+              variant="subtitle1"
+              component="div"
+              color={theme.palette.accent}
+              fontWeight={800}
+            >
+              {lineTotalPrice}
+            </Typography>
           </Stack>
 
           <Stack direction="row" alignItems="center" gap={5}>

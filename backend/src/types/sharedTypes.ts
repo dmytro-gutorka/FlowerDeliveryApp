@@ -16,6 +16,21 @@ export interface PaginatedResponse<T> {
     totalResults: number
 }
 
+
+export interface ProductItem {
+    offerId: string
+    isActive: boolean
+    priceCents: number,
+    stock: number,
+    description: string
+    isFavorite: boolean
+    imagePath: string
+    title: string
+    type: Uppercase<ProductType>
+    shopName: string
+    shopId: string
+}
+
 export type OfferWithProduct = Prisma.ShopProductGetPayload<{include: { product: true}}>
 
 export type ProductSortBy = typeof PRODUCT_SORT_BY [keyof typeof PRODUCT_SORT_BY]

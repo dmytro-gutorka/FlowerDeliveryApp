@@ -33,7 +33,8 @@ export async function createOrder(req: Request<any, any, OrderInput, any>, res: 
         const offerIds: string[] = req.body.items.map(item => item.offerId)
         const offers: OfferWithProduct[] = await loadOffers(offerIds);
 
-        await ensureSingleActiveShop(offers, req.body.shopId);
+
+        // await ensureSingleActiveShop(offers, req.body.shopId); feature have some glitches
         await checkStock(req.body.items);
 
         const orderItems = await getOrderItems(req.body.items, offers)

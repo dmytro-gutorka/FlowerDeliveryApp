@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Stack, useTheme } from '@mui/material';
+import { Stack, useTheme } from '@mui/material';
 import type { IShop } from '../../types/types.ts';
 import Typography from '@mui/material/Typography';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
@@ -6,14 +6,17 @@ import Box from '@mui/material/Box';
 
 interface ShopProps {
   shop: IShop;
+  shopId: string | null;
+  setShop: (shopId: string | null) => void;
 }
 
-export default function Shop({ shop }: ShopProps) {
+export default function Shop({ shop, shopId, setShop }: ShopProps) {
   const { address, imagePath, name } = shop;
 
   const theme = useTheme();
   return (
     <Stack
+      onClick={() => setShop(shop.id)}
       sx={{
         display: 'flex',
         flexDirection: 'row',
@@ -23,6 +26,7 @@ export default function Shop({ shop }: ShopProps) {
         border: `1px solid ${theme.palette.grey[200]}`,
         alignItems: 'center',
         cursor: 'pointer',
+        backgroundColor: shopId === shop.id ? theme.palette.grey[100] : 'white',
         '&:hover': {
           backgroundColor: theme.palette.grey[100],
         },

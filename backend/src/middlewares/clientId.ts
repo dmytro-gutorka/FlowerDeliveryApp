@@ -8,7 +8,7 @@ export function clientId(req: Request, res: Response, next: NextFunction) {
         res.cookie('clientId', cid, {
             maxAge: 1000 * 60 * 60 * 24 * 365,
             httpOnly: true,
-            sameSite: 'lax',
+            sameSite: 'none',
             path: '/'
         })
     }

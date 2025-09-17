@@ -1,5 +1,5 @@
 import { Shop, ShopProduct } from '@prisma/client';
-import { PaginatedResponse, ProductSortBy } from "../types/sharedTypes";
+import {PaginatedResponse, ProductItem, ProductSortBy} from "../types/sharedTypes";
 import { prisma } from "../index";
 import { PRODUCTS_PAGE_PAGINATION } from "../constants";
 
@@ -10,7 +10,7 @@ class ShopServices {
         return prisma.shop.findMany();
     }
 
-    async listShopProducts(shopId: string, page: number, sortBy: ProductSortBy, clientId: string): Promise<PaginatedResponse<ShopProduct[]>> {
+    async listShopProducts(shopId: string, page: number, sortBy: ProductSortBy, clientId: string): Promise<PaginatedResponse<ProductItem[]>> {
         const [by, mod] = sortBy.split('.')
 
         const shopsWithProducts = await prisma.shopProduct.findMany(
@@ -24,6 +24,7 @@ class ShopServices {
             skip: (page - 1) * PRODUCTS_PAGE_PAGINATION,
             take: PRODUCTS_PAGE_PAGINATION,
             include: {
+                shop: true,
                 product: {
                     include: {
                         favorites: {
@@ -36,9 +37,24 @@ class ShopServices {
             }
         })
 
+        const flatItems = sortedPaginatedResult.map(i => ({
+            offerId: i.id,
+            isActive: i.isActive,
+            priceCents: i.priceCents,
+            stock: i.stock,
+            description: i.product.description,
+            isFavorite: i.product.favorites?.length > 0,
+            imagePath: i.product.imagePath,
+            title: i.product.title,
+            type: i.product.type,
+            shopName: i.shop.name,
+            shopId: i.shopId
+
+        }))
+
         return {
             page,
-            results: sortedPaginatedResult,
+            results: flatItems,
             totalPages,
             totalResults
         }

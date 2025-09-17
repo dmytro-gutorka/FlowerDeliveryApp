@@ -1,4 +1,4 @@
-import type { FlowerItem } from '../../types/types.ts';
+import type { ProductItem } from '../../types/types.ts';
 import { useCartStore } from '../../app/store/cart/store.ts';
 import {
   CardActionArea,
@@ -18,11 +18,13 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
+import convertCentsToUsd from '../../utils/convertCentsToUsd.ts';
+import getFormatedCurrency from '../../utils/getFormatedCurrency.ts';
 
 interface ProductProps {
-  item: FlowerItem & {
-    totalPrice?: number;
-    quantity?: number;
+  item: ProductItem & {
+    lineTotal: number;
+    quantity: number;
   };
   cardWidth: number;
   imgHeight: number;
@@ -31,10 +33,16 @@ interface ProductProps {
 export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
   const theme = useTheme();
 
-  const { description, name, price, shop, imagePath, isBouquet, isFavorite } = item;
+  const { description, title, priceCents, imagePath, type, isFavorite, shopName } = item;
+
+  const isSingleFlower = type === 'SINGLE_FLOWER';
+  const imgPath = `./${isSingleFlower ? 'single-flower-card-images' : 'bouquet-flower-card-images'}/${imagePath}`;
+
   const { addProduct, incrementQuantity, decrementQuantity } = useCartStore(
     (state) => state.actions,
   );
+
+  const price = getFormatedCurrency(convertCentsToUsd(priceCents));
 
   return (
     <Card
@@ -51,16 +59,16 @@ export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
       }}
     >
       <CardActionArea>
-        <CardMedia component="img" height={imgHeight} image={imagePath} alt={name} />
+        <CardMedia component="img" height={imgHeight} image={imgPath} alt={title} />
         <CardContent>
           <Stack direction="row" alignItems="end" gap={0.5}>
             <StoreOutlinedIcon />
             <Typography gutterBottom variant="subtitle2" component="div" lineHeight={0.8}>
-              {shop}
+              {shopName}
             </Typography>
           </Stack>
           <Typography gutterBottom variant="h5" component="div" fontWeight={700}>
-            {name}
+            {title}
           </Typography>
           <Typography variant="body2">{description}</Typography>
         </CardContent>
@@ -69,7 +77,7 @@ export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
         sx={{ color: theme.palette.accent, justifyContent: 'space-between', padding: 2 }}
       >
         <Typography variant="h5" fontWeight={900}>
-          ${price}
+          {price}
         </Typography>
         {Boolean(!item?.quantity || item.quantity === 0) && (
           <Button startIcon={<ShoppingCartOutlinedIcon />} onClick={() => addProduct(item)}>
@@ -106,7 +114,7 @@ export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
         )}
       </CardActions>
       <LikeButton isActive={isFavorite} />
-      {isBouquet && (
+      {!isSingleFlower && (
         <Chip
           label="Bouquet"
           sx={{

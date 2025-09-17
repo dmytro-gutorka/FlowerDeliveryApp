@@ -23,6 +23,6 @@ export async function ensureSingleActiveShop(offers: ShopProduct[], shopId: stri
 
 export async function calculateTotalCents(orderItem: OrderItemPartial[]) {
     return orderItem
-        .map(oi => oi.priceCents * oi.priceCents)
+        .map(oi => oi.priceCents * oi.quantity)
         .reduce((acc, curr) => acc + curr, 0)
 }

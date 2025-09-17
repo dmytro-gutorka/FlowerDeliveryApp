@@ -5,83 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_boquet.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_11.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_12.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_13.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_14.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/bouquet-flower-card-images/flower_bouquet_9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/shop-card-images/flower_shop_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/shop-card-images/flower_shop_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/shop-card-images/flower_shop_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/shop-card-images/flower_shop_4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_11.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_12.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_13.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_14.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_15.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_16.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_17.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/single-flower-card-images/single_flower_9.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0/storage_v2/_src_/database/flower_db.4hTspg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0/storage_v2/_src_/database/flower_db.4hTspg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Homepage/Homepage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/favorites.controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/favorites.controllers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/controllers/orders.controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/orders.controllers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/controllers/shops.controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/shops.controllers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/middlewares/generateUid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/middlewares/clientId.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250915231130_init/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250916150518_rename_offer_relations/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250916152342_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250916192450_y/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250916202533_y/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250916204115_y/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250916235527_y/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/migration_lock.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/models/shops.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/models/shops.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/seed.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/favorites.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/favorites.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/favorites.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/favorites.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/middlewares/clientId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/middlewares/clientId.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/services/offer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/offer.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/order.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/order.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/orderItem.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/orderItem.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/services/shop.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/shop.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/sharedTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/types/sharedTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/types/sharedTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/types/sharedTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/flower_1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/flower_2.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/flower_3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/flower_4.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Shops/Shops.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Shops/Shops.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/cart/handlers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/cart/handlers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/cart/selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/cart/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/cart/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/store/cart/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store/cart/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartProduct/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartProduct/CartProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartProductList/CartProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartProductList/CartProductList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderForm/OrderForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderForm/OrderForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Product/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Product/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductList/ProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductList/ProductList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Shop/Shop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Shop/Shop.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ShopList/ShopList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ShopList/ShopList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Shops/Shops.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Shops/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Homepage/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,9 +40,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="JSX Component Folder.tsx.child.0" />
         <option value="JSX Component Folder" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -204,7 +152,7 @@
       <workItem from="1758055307820" duration="5227000" />
       <workItem from="1758066995887" duration="1391000" />
       <workItem from="1758097792083" duration="5107000" />
-      <workItem from="1758107487183" duration="3481000" />
+      <workItem from="1758107487183" duration="16829000" />
     </task>
     <servers />
   </component>

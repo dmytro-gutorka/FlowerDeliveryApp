@@ -1,4 +1,4 @@
-import type { BaseItem, CartItem } from '../../../types/types.ts';
+import type { CartItem, ProductItem } from '../../../types/types.ts';
 
 interface CartStoreActions<T> {
   addProduct: (item: CartItem<T>) => void;
@@ -8,7 +8,7 @@ interface CartStoreActions<T> {
   clearCart: () => void;
 }
 
-export type CartStore<T extends BaseItem> = {
+export type CartStore<T extends ProductItem> = {
   items: CartItem<T>[];
   totalPrice: number;
   totalItems: number;
