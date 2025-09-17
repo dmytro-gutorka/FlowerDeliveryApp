@@ -29,6 +29,7 @@ export interface ProductItem {
     type: Uppercase<ProductType>
     shopName: string
     shopId: string
+    productId: string
 }
 
 export type OfferWithProduct = Prisma.ShopProductGetPayload<{include: { product: true}}>

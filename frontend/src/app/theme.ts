@@ -74,32 +74,5 @@ export const theme = createTheme(base, {
         },
       },
     },
-    // MuiOutlinedInput: {
-    //   styleOverrides: {
-    //     notchedOutline: {
-    //       height: base.spacing(6),
-    //     },
-    //     root: {
-    //       height: base.spacing(5),
-    //       margin: 0,
-    //       padding: '0px 0px 0px 0px',
-    //     },
-    //   },
-    // },
-    // MuiInputBase: {
-    //   styleOverrides: {
-    //     root: {
-    //       margin: 0,
-    //       padding: '0px 0px 0px 0px',
-    //
-    //       '& .MuiInputBase-input': {
-    //         margin: 0,
-    //         paddingInline: base.spacing(1),
-    //       },
-    //     },
-    //   },
-    // },
   },
 });
-
-// MuiInputBase-input

@@ -15,7 +15,9 @@ export default function useShopWithProducts(
   const { data: products, isSuccess: isProductsSuccess } = useQuery({
     queryKey: ['products', page, shopId, sortType],
     queryFn: () =>
-      fetch(`${SERVER_URL}/api/v1/shops/${shopId}/products?page=${page}&sort=${sortType}`)
+      fetch(`${SERVER_URL}/api/v1/shops/${shopId}/products?page=${page}&sort=${sortType}`, {
+        credentials: 'include',
+      })
         .then((res) => res.json())
         .catch(console.error),
     enabled: isShopsSuccess,

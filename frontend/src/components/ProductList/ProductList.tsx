@@ -18,7 +18,7 @@ interface ProductListProps {
 
 export default function ProductList({ products, onSortChange, sortType }: ProductListProps) {
   const cartItems = useCartStore((state) => state.items);
-  const { results: items } = products;
+  const { results: items, totalPages } = products;
 
   const cartItemsModified = addCartItemFields(items, cartItems);
 
@@ -46,7 +46,7 @@ export default function ProductList({ products, onSortChange, sortType }: Produc
             <Product key={item.offerId} item={item} cardWidth={300} imgHeight={220} />
           ))}
         </Stack>
-        <Pagination count={10} sx={{ placeSelf: 'center' }} />
+        <Pagination count={totalPages} sx={{ placeSelf: 'center' }} />
       </Stack>
     </Box>
   );

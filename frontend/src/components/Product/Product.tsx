@@ -31,18 +31,16 @@ interface ProductProps {
 }
 
 export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
+  const { description, title, priceCents, imagePath, type, isFavorite, shopName, productId } = item;
+
   const theme = useTheme();
-
-  const { description, title, priceCents, imagePath, type, isFavorite, shopName } = item;
-
   const isSingleFlower = type === 'SINGLE_FLOWER';
   const imgPath = `./${isSingleFlower ? 'single-flower-card-images' : 'bouquet-flower-card-images'}/${imagePath}`;
+  const price = getFormatedCurrency(convertCentsToUsd(priceCents));
 
   const { addProduct, incrementQuantity, decrementQuantity } = useCartStore(
     (state) => state.actions,
   );
-
-  const price = getFormatedCurrency(convertCentsToUsd(priceCents));
 
   return (
     <Card
@@ -113,7 +111,7 @@ export default function Product({ item, cardWidth, imgHeight }: ProductProps) {
           </Stack>
         )}
       </CardActions>
-      <LikeButton isActive={isFavorite} />
+      <LikeButton isActive={isFavorite} productId={productId} />
       {!isSingleFlower && (
         <Chip
           label="Bouquet"

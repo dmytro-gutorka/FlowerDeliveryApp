@@ -53,6 +53,7 @@ export interface ProductItem {
   shopName: string;
   type: Uppercase<ProductType>;
   shopId: string;
+  productId: string;
 }
 
 export type SortTypes = (typeof PRODUCT_SORT_BY)[keyof typeof PRODUCT_SORT_BY];

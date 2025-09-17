@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import OrderInfo from '../OrderInfo';
 import useOrderForm from '../../hooks/useOrderForm.ts';
+import { useCartStore } from '../../app/store/cart/store.ts';
 
 export function OrderForm() {
   const {
@@ -18,6 +19,7 @@ export function OrderForm() {
   } = useOrderForm();
 
   const navigation = useNavigate();
+  const clearCart = useCartStore((state) => state.actions.clearCart);
 
   const createOrder = async (data: OrderFormInputs) => {
     const res = await fetch(`${SERVER_URL}/api/v1/orders`, {
@@ -28,8 +30,9 @@ export function OrderForm() {
     });
 
     const order = await res.json();
-
     await navigation(`/orders/${order.id}`);
+
+    clearCart();
   };
 
   const theme = useTheme();

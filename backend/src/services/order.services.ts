@@ -36,4 +36,15 @@ export async function createOrderWithItems(data: OrderInput, totalCents: number,
             items: true,
         }
     });
+
+
+
 }
+export async  function getOrderDetails(orderId: string) {
+    return prisma.order.findUnique({
+        where: {id: orderId},
+        include: {
+            items: true,
+        }
+    });
+    }

@@ -3,7 +3,7 @@ import {OfferWithProduct} from "../types/sharedTypes";
 import { z } from 'zod';
 import {calculateTotalCents, loadOffers } from "../services/offer.service";
 import {checkStock} from "../services/stock.service";
-import {createOrderWithItems} from "../services/order.services";
+import {createOrderWithItems, getOrderDetails} from "../services/order.services";
 import {getOrderItems} from "../services/orderItem.service";
 
 export const CreateOrderItem = z.object({
@@ -43,4 +43,17 @@ export async function createOrder(req: Request<any, any, OrderInput, any>, res: 
     } catch(e: Error | any) {
         return res.status(400).json({message: e?.message || 'Invalid input'})
     }
+}
+
+
+export async function getOrder(req: Request, res: Response) {
+    const { orderId } = req.params;
+
+    try {
+        const orderDetails = await getOrderDetails(orderId)
+        return res.status(200).json(orderDetails)
+    }
+     catch (e: Error | any) {
+        return res.status(400).json({message: e?.message || 'Invalid input'})
+     }
 }

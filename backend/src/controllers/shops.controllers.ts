@@ -16,7 +16,7 @@ export async function listShops(req: Request, res: Response) {
 
 export async function listShopProducts(req: Request, res: Response) {
     const {shopId} = req.params;
-    const clientId = req.cookies.clientId;
+    const clientId = req.cookies.clientId
     const page: number = Number(req.query.page) || 1;
     const sortBy: ProductSortBy = req.query.sort as ProductSortBy || 'priceCents.asc';
 

@@ -31,6 +31,8 @@ export async function deleteFavorite(req: Request, res: Response) {
     const clientId = req.clientId!
     const { productId } = req.params;
 
+    console.log(clientId, productId)
+
     try {
         await favoritesService.deleteFavorite(clientId, productId)
 

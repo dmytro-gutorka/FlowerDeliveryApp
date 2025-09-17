@@ -9,16 +9,8 @@ import { useEffect } from 'react';
 export default function useOrderForm() {
   const { lng, lat, clientOffsetMinutes, clientTz } = getClientOrderMetadata();
   const cartItems: ICartItem<ProductItem>[] = useCartStore((state) => state.items);
-  const cartOrderItems = cartItems.map((item) => ({
-    offerId: item.offerId,
-    quantity: item.quantity,
-  }));
 
   const shopId = cartItems[0]?.shopId;
-  const geo = {
-    lat: lng ?? 1,
-    lng: lat ?? 1,
-  };
 
   const {
     control,

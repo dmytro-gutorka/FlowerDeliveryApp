@@ -42,6 +42,7 @@ class ShopServices {
             isActive: i.isActive,
             priceCents: i.priceCents,
             stock: i.stock,
+            productId: i.product.id,
             description: i.product.description,
             isFavorite: i.product.favorites?.length > 0,
             imagePath: i.product.imagePath,
@@ -49,7 +50,6 @@ class ShopServices {
             type: i.product.type,
             shopName: i.shop.name,
             shopId: i.shopId
-
         }))
 
         return {
