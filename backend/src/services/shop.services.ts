@@ -14,11 +14,9 @@ class ShopServices {
         const [by, mod] = sortBy.split('.')
 
         const shopsWithProducts = await prisma.shopProduct.findMany(
-            { where: { shopId }, include: { product: true } }
-        )
+            { where: { shopId }, include: { product: true } })
         const totalResults = shopsWithProducts.length
         const totalPages = Math.ceil(totalResults / PRODUCTS_PAGE_PAGINATION)
-
 
         const sortedPaginatedResult = await prisma.shopProduct.findMany({
             where: { shopId },

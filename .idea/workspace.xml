@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/orders.controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/orders.controllers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/shops.controllers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/shops.controllers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/shops.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/shops.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/offer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/offer.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/order.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/order.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/orderItem.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/orderItem.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/prisma/models/products.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/prisma/models/products.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/services/shop.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/shop.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/types/sharedTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/sharedTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +130,8 @@
       <workItem from="1758045912950" duration="8411000" />
       <workItem from="1758054367040" duration="796000" />
       <workItem from="1758055179346" duration="114000" />
-      <workItem from="1758055307820" duration="3750000" />
+      <workItem from="1758055307820" duration="5227000" />
+      <workItem from="1758066995887" duration="377000" />
     </task>
     <servers />
   </component>

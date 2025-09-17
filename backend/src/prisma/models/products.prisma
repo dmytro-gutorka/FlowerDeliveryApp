@@ -12,6 +12,7 @@ model Product {
   type        ProductType
 
   offers ShopProduct[]
+  favorites Favorite[]
 
   createdAt DateTime @default(now())
 }
