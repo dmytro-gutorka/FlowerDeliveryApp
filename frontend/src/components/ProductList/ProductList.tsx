@@ -1,4 +1,4 @@
-import type { CartItem, PaginatedResponse, ProductItem, SortTypes } from '../../types/types.ts';
+import type { ICartItem, PaginatedResponse, ProductItem, SortTypes } from '../../types/types.ts';
 import { Pagination, Stack } from '@mui/material';
 import { useCartStore } from '../../app/store/cart/store.ts';
 import LocalFloristOutlinedIcon from '@mui/icons-material/LocalFloristOutlined';
@@ -42,7 +42,7 @@ export default function ProductList({ products, onSortChange, sortType }: Produc
       </Stack>
       <Stack gap={8}>
         <Stack direction="row" gap={3} flexWrap="wrap" justifyContent="space-between">
-          {cartItemsModified.map((item: CartItem<ProductItem>) => (
+          {cartItemsModified.map((item: ICartItem<ProductItem>) => (
             <Product key={item.offerId} item={item} cardWidth={300} imgHeight={220} />
           ))}
         </Stack>

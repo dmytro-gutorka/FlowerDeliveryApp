@@ -1,42 +1,13 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Controller, useForm } from 'react-hook-form';
+import type { OrderFormInputs } from '../../zod-validations/order-form.ts';
+import { Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 import { Button, Stack, TextField, useTheme } from '@mui/material';
-import { z } from 'zod';
+import { SERVER_URL } from '../../app/constants.ts';
 import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import OrderInfo from '../OrderInfo';
-
-export const CartItem = z.object({
-  offerId: z.uuid(),
-  quantity: z.number().int().min(1),
-});
-
-const orderShema = z.object({
-  shopId: z.uuid(),
-  fullName: z
-    .string()
-    .min(2, 'Your name should be longer than 2 character.')
-    .max(50, 'Your name should not exceed 50 characters.'),
-  email: z.email('Invalid email address.'),
-  phone: z
-    .string()
-    .regex(
-      /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/,
-      'Invalid phone number address.',
-    ),
-  address: z
-    .string()
-    .min(10, 'Your address should be longer than 10 characters.')
-    .max(255, 'Your address should not exceed 255 characters.'),
-
-  items: z.array(CartItem).min(1),
-  geo: z.object({ lat: z.number(), lng: z.number() }),
-  clientTz: z.string(),
-  clientOffsetMinutes: z.number().int(),
-});
-
-type OrderFormInputs = z.infer<typeof orderShema>;
+import useOrderForm from '../../hooks/useOrderForm.ts';
 
 export function OrderForm() {
   const {
@@ -44,45 +15,42 @@ export function OrderForm() {
     handleSubmit,
     register,
     formState: { errors, isDirty, isValid },
-  } = useForm<OrderFormInputs>({
-    resolver: zodResolver(orderShema),
-    mode: 'onChange',
-    defaultValues: {
-      shopId: '',
-      fullName: '',
-      email: '',
-      phone: '',
-      address: '',
-      geo: {
-        lat: 2,
-        lng: 2,
-      },
-      clientTz: '',
-      clientOffsetMinutes: 11,
-      items: [{}, {}],
-    },
-  });
+  } = useOrderForm();
 
-  const onSubmit = (data: OrderFormInputs) => console.log(data);
+  const navigation = useNavigate();
+
+  const createOrder = async (data: OrderFormInputs) => {
+    const res = await fetch(`${SERVER_URL}/api/v1/orders`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify(data),
+    });
+
+    const order = await res.json();
+
+    await navigation(`/orders/${order.id}`);
+  };
+
   const theme = useTheme();
 
   return (
     <Box
+      onSubmit={handleSubmit(createOrder)}
       component="form"
       minWidth={theme.spacing(30)}
       borderRadius={theme.shape.borderRadiusScale.sm}
       boxShadow={1}
       p={2.5}
     >
-      <Stack component="fieldset" onSubmit={handleSubmit(onSubmit)} gap={2} border={0} p={0} m={0}>
+      <Stack component="fieldset" gap={2} border={0} p={0} m={0}>
         <Typography variant="h6" component="legend" fontWeight={700} mb={2}>
           Delivery Information
         </Typography>
 
         <input type="hidden" {...register('shopId')} />
-        <input type="hidden" {...register('shopId')} />
-        <input type="hidden" {...register('shopId')} />
-        <input type="hidden" {...register('shopId')} />
+        <input type="hidden" {...register('clientTz')} />
+        <input type="hidden" {...register('clientOffsetMinutes')} />
 
         <Controller
           name="fullName"

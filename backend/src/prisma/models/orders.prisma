@@ -2,6 +2,7 @@ model Order {
   id       String @id @default(uuid(4))
   orderUid String
 
+  fullName String @default("Anonym")
   email   String
   phone   String
   address String

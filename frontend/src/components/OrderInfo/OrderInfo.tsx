@@ -3,6 +3,7 @@ import { useCartStore } from '../../app/store/cart/store.ts';
 import Typography from '@mui/material/Typography';
 import { useShallow } from 'zustand/shallow';
 import getFormatedCurrency from '../../utils/getFormatedCurrency.ts';
+import convertCentsToUsd from '../../utils/convertCentsToUsd.ts';
 
 export default function OrderInfo() {
   const { totalPrice, subtotalItems, totalItems } = useCartStore(
@@ -13,7 +14,7 @@ export default function OrderInfo() {
     })),
   );
 
-  const totalPriceWithCurrency = getFormatedCurrency(totalPrice);
+  const price = getFormatedCurrency(convertCentsToUsd(totalPrice));
 
   return (
     <>
@@ -44,7 +45,7 @@ export default function OrderInfo() {
             Total
           </Typography>
           <Typography variant="body1" fontWeight={700}>
-            {totalPriceWithCurrency}
+            {price}
           </Typography>
         </Stack>
       </Stack>

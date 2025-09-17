@@ -14,12 +14,12 @@ export interface FlowerItem extends BaseItem {
   isBouquet: boolean;
 }
 
-export type CartItem<T> = T & {
+export type ICartItem<T> = T & {
   lineTotal: number;
   quantity: number;
 };
 
-export type FlowerCartItem = CartItem<FlowerItem>;
+export type FlowerCartItem = ICartItem<FlowerItem>;
 
 export interface IShop {
   address: string;

@@ -28,6 +28,7 @@ CREATE TABLE "public"."OrderItem" (
 CREATE TABLE "public"."Order" (
     "id" TEXT NOT NULL,
     "orderUid" TEXT NOT NULL,
+    "fullName" TEXT NOT NULL DEFAULT 'Anonym',
     "email" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
     "address" TEXT NOT NULL,

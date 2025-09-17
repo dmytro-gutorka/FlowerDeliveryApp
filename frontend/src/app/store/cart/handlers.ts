@@ -1,7 +1,7 @@
-import type { CartItem, ProductItem } from '../../../types/types.ts';
+import type { ICartItem, ProductItem } from '../../../types/types.ts';
 import type { CartStore } from './types.ts';
 
-export function handleIncrementQuantity(item: CartItem<ProductItem>, set) {
+export function handleIncrementQuantity(item: ICartItem<ProductItem>, set) {
   set((state: CartStore<ProductItem>) => ({
     subtotalItems: state.subtotalItems + 1,
     totalPrice: state.totalPrice + item.priceCents,
@@ -14,7 +14,7 @@ export function handleIncrementQuantity(item: CartItem<ProductItem>, set) {
   }));
 }
 
-export function handleDecrementQuantity(item: CartItem<ProductItem>, set) {
+export function handleDecrementQuantity(item: ICartItem<ProductItem>, set) {
   if (item.quantity <= 1) return handleRemoveItem(item, set);
 
   set((state: CartStore<ProductItem>) => ({
@@ -29,7 +29,7 @@ export function handleDecrementQuantity(item: CartItem<ProductItem>, set) {
   }));
 }
 
-export function handleAddItem(item: CartItem<ProductItem>, set) {
+export function handleAddItem(item: ICartItem<ProductItem>, set) {
   set((state: CartStore<ProductItem>) => ({
     subtotalItems: state.subtotalItems + 1,
     totalPrice: state.totalPrice + item.priceCents,
@@ -39,7 +39,7 @@ export function handleAddItem(item: CartItem<ProductItem>, set) {
   }));
 }
 
-export function handleRemoveItem(item: CartItem<ProductItem>, set) {
+export function handleRemoveItem(item: ICartItem<ProductItem>, set) {
   set((state: CartStore<ProductItem>) => ({
     subtotalItems: state.subtotalItems - item.quantity,
     totalPrice: state.totalPrice - item.priceCents * item.quantity,

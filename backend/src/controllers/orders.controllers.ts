@@ -1,12 +1,10 @@
 import { Request, Response } from 'express';
 import {OfferWithProduct} from "../types/sharedTypes";
-
 import { z } from 'zod';
-import {calculateTotalCents, ensureSingleActiveShop, loadOffers } from "../services/offer.service";
+import {calculateTotalCents, loadOffers } from "../services/offer.service";
 import {checkStock} from "../services/stock.service";
 import {createOrderWithItems} from "../services/order.services";
 import {getOrderItems} from "../services/orderItem.service";
-
 
 export const CreateOrderItem = z.object({
     offerId: z.uuid(),
@@ -16,6 +14,7 @@ export const CreateOrderItem = z.object({
 export const CreateOrderInput = z.object({
     shopId: z.uuid(),
     items: z.array(CreateOrderItem).min(1),
+    fullName: z.string().min(5).max(70),
     email: z.email(),
     phone: z.string().min(5),
     address: z.string().min(5),
@@ -32,7 +31,6 @@ export async function createOrder(req: Request<any, any, OrderInput, any>, res: 
     try {
         const offerIds: string[] = req.body.items.map(item => item.offerId)
         const offers: OfferWithProduct[] = await loadOffers(offerIds);
-
 
         // await ensureSingleActiveShop(offers, req.body.shopId); feature have some glitches
         await checkStock(req.body.items);

@@ -70,8 +70,11 @@ async function main() {
                 : rnd(500, 2000);
         const priceCents = Math.max(300, base + rnd(-200, 250));
 
-        const stock = rnd(0, 30);
-        const isActive = stock === 0 ? false : Math.random() > 0.15;
+        // const stock = rnd(0, 30);
+        // const isActive = stock === 0 ? false : Math.random() > 0.15;
+
+        const stock = 9999
+        const isActive = true;
 
         offersData.push({
             stock,

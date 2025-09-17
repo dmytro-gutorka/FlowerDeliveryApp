@@ -1,15 +1,15 @@
-import type { CartItem, ProductItem } from '../../../types/types.ts';
+import type { ICartItem, ProductItem } from '../../../types/types.ts';
 
 interface CartStoreActions<T> {
-  addProduct: (item: CartItem<T>) => void;
-  removeProduct: (item: CartItem<T>) => void;
-  incrementQuantity: (item: CartItem<T>) => void;
-  decrementQuantity: (item: CartItem<T>) => void;
+  addProduct: (item: ICartItem<T>) => void;
+  removeProduct: (item: ICartItem<T>) => void;
+  incrementQuantity: (item: ICartItem<T>) => void;
+  decrementQuantity: (item: ICartItem<T>) => void;
   clearCart: () => void;
 }
 
 export type CartStore<T extends ProductItem> = {
-  items: CartItem<T>[];
+  items: ICartItem<T>[];
   totalPrice: number;
   totalItems: number;
   subtotalItems: number;

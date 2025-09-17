@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Shop, } from '@prisma/client';
-import {PaginatedResponse, ProductItem, ProductSortBy} from "../types/sharedTypes";
+import { PaginatedResponse, ProductItem, ProductSortBy} from "../types/sharedTypes";
 import { shopService } from "../services/shop.services";
 
 

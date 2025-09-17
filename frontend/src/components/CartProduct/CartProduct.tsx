@@ -1,4 +1,4 @@
-import type { CartItem, ProductItem } from '../../types/types.ts';
+import type { ICartItem, ProductItem } from '../../types/types.ts';
 import { useTheme } from '@mui/material/styles';
 import { Stack } from '@mui/material';
 import { useCartStore } from '../../app/store/cart/store.ts';
@@ -14,7 +14,7 @@ import convertCentsToUsd from '../../utils/convertCentsToUsd.ts';
 import getFormatedCurrency from '../../utils/getFormatedCurrency.ts';
 
 interface CartProductProps {
-  item: CartItem<ProductItem>;
+  item: ICartItem<ProductItem>;
 }
 
 export default function CartProduct({ item }: CartProductProps) {
