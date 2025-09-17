@@ -5,6 +5,7 @@ model Shop {
   address String
   lat     String
   lan     String
+  imagePath String
 
   offers ShopProduct[]
   orders Order[]

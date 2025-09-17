@@ -1,7 +1,7 @@
 import { customAlphabet } from 'nanoid'
 import { prisma} from "../index";
 import { OrderInput } from "../controllers/orders.controllers";
-import {OrderItemPartial} from "../sharedTypes";
+import {OrderItemPartial} from "../types/sharedTypes";
 
 const makeUid = customAlphabet('ABCDEFGHJKLMNPQRSTUVWXYZ23456789', 8)
 

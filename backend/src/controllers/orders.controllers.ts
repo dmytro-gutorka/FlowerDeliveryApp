@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import {OfferWithProduct} from "../sharedTypes";
+import {OfferWithProduct} from "../types/sharedTypes";
 
 import { z } from 'zod';
 import {calculateTotalCents, ensureSingleActiveShop, loadOffers } from "../services/offer.service";

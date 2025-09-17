@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import {favoritesService} from "../services/favorites.service";
 
 export async function getFavorites(req: Request, res: Response) {
-    const clientId = (req as any).clientId as string;
+    const clientId = req.clientId!
 
     try {
         const favorites = await favoritesService.getFavorites(clientId)
@@ -14,11 +14,13 @@ export async function getFavorites(req: Request, res: Response) {
 
 
 export async function createFavorite(req: Request, res: Response) {
-    const clientId = (req as any).clientId as string;
-    const { productId } = req.params;
+    const clientId = req.clientId!
+    const { productId } = req.body;
 
     try {
+        await favoritesService.createFavorite(clientId, productId)
 
+        res.status(200).json({message: 'Favorite created'})
     }
     catch (e: any) {
         res.status(400).json({message: e?.message || 'Invalid input'})
@@ -26,15 +28,15 @@ export async function createFavorite(req: Request, res: Response) {
 }
 
 export async function deleteFavorite(req: Request, res: Response) {
-    const clientId = (req as any).clientId as string;
+    const clientId = req.clientId!
     const { productId } = req.params;
 
-
     try {
+        await favoritesService.deleteFavorite(clientId, productId)
 
+        res.status(200).json({message: 'Favorite deleted'})
     }
     catch (e: any) {
         res.status(400).json({message: e?.message || 'Invalid input'})
     }
-
 }

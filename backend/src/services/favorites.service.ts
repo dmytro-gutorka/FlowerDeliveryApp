@@ -8,10 +8,13 @@ class FavoritesService {
         })
     }
 
-     async createFavorite() {
-
+     async createFavorite(clientId: string, productId: string) {
+        await prisma.favorite.create({ data: { clientId, productId } })
      }
 
+    async deleteFavorite(clientId: string, productId: string) {
+        await prisma.favorite.delete({ where: { clientId_productId: { clientId, productId } } })
+    }
 }
 
 

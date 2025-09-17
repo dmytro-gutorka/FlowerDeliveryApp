@@ -1,5 +1,5 @@
 import { Shop, ShopProduct } from '@prisma/client';
-import { PaginatedResponse, ProductSortBy } from "../sharedTypes";
+import { PaginatedResponse, ProductSortBy } from "../types/sharedTypes";
 import { prisma } from "../index";
 import { PRODUCTS_PAGE_PAGINATION } from "../constants";
 
@@ -10,11 +10,11 @@ class ShopServices {
         return prisma.shop.findMany();
     }
 
-    async listShopProducts(shopId: string, page: number, sortBy: ProductSortBy): Promise<PaginatedResponse<ShopProduct[]>> {
+    async listShopProducts(shopId: string, page: number, sortBy: ProductSortBy, clientId: string): Promise<PaginatedResponse<ShopProduct[]>> {
         const [by, mod] = sortBy.split('.')
 
         const shopsWithProducts = await prisma.shopProduct.findMany(
-            { where: { shopId }, include: { product: true } })
+            { where: { shopId }, include: { product: true }, })
         const totalResults = shopsWithProducts.length
         const totalPages = Math.ceil(totalResults / PRODUCTS_PAGE_PAGINATION)
 
@@ -23,7 +23,17 @@ class ShopServices {
             orderBy: { [by]: mod },
             skip: (page - 1) * PRODUCTS_PAGE_PAGINATION,
             take: PRODUCTS_PAGE_PAGINATION,
-            include: { product: true }
+            include: {
+                product: {
+                    include: {
+                        favorites: {
+                            where: { clientId },
+                            select: { id: true },
+                            take: 1,
+                        }
+                    }
+                }
+            }
         })
 
         return {

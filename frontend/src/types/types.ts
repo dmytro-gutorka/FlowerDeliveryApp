@@ -18,3 +18,14 @@ export type CartItem<T> = T & {
 };
 
 export type FlowerCartItem = CartItem<FlowerItem>;
+
+export interface IShop {
+  address: string;
+  createdAt: string;
+  id: string;
+  imagePath: string;
+  lan: string;
+  lat: string;
+  name: string;
+  favorites?: never;
+}

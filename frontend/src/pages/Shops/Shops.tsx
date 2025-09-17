@@ -1,5 +1,5 @@
-interface Shops {}
+import ShopList from '../../components/ShopList';
 
-export default function Shops({}: Shops) {
-  return <div>Shops</div>;
+export default function Shops() {
+  return <ShopList />;
 }
