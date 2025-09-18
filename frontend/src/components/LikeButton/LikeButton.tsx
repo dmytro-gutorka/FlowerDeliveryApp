@@ -62,9 +62,9 @@ export default function LikeButton({ isActive, productId }: LikeButtonProps) {
       }}
     >
       {isActive ? (
-        <FavoriteIcon htmlColor="white" fontSize="medium" onClick={deleteFav} />
+        <FavoriteIcon htmlColor="white" fontSize="medium" onClick={() => deleteFav()} />
       ) : (
-        <FavoriteBorderIcon fontSize="medium" onClick={createFav} />
+        <FavoriteBorderIcon fontSize="medium" onClick={() => createFav()} />
       )}
     </IconButton>
   );

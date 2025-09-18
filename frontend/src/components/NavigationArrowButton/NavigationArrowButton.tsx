@@ -9,13 +9,21 @@ interface NavigationArrowButtonProps {
 }
 
 export default function NavigationArrowButton({ direction = '/' }: NavigationArrowButtonProps) {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const theme = useTheme();
+
+  const handleClick = async () => {
+    if (typeof direction === 'number') {
+      await navigate(direction);
+    } else {
+      await navigate(direction);
+    }
+  };
 
   return (
     <Stack direction="row" alignItems="center" mb={5} gap={2}>
       <IconButton
-        onClick={() => navigation(direction)}
+        onClick={() => handleClick}
         aria-label="back to home"
         sx={{
           backgroundColor: theme.palette.grey[100],
