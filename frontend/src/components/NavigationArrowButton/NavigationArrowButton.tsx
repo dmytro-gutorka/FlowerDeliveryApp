@@ -2,28 +2,20 @@ import { Stack, useTheme } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import WestOutlinedIcon from '@mui/icons-material/WestOutlined';
-import { useNavigate } from 'react-router';
+import { Link } from '@tanstack/react-router';
 
 interface NavigationArrowButtonProps {
-  direction?: string | -1 | 1;
+  direction?: string; // 1 -1 ????
 }
 
 export default function NavigationArrowButton({ direction = '/' }: NavigationArrowButtonProps) {
-  const navigate = useNavigate();
   const theme = useTheme();
-
-  const handleClick = async () => {
-    if (typeof direction === 'number') {
-      await navigate(direction);
-    } else {
-      await navigate(direction);
-    }
-  };
 
   return (
     <Stack direction="row" alignItems="center" mb={5} gap={2}>
       <IconButton
-        onClick={() => handleClick}
+        component={Link}
+        to={direction}
         aria-label="back to home"
         sx={{
           backgroundColor: theme.palette.grey[100],

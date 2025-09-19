@@ -6,12 +6,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import FlowerIcon from '../../assets/FlowerIcon';
-import { useNavigate } from 'react-router';
 import { useCartStore } from '../../app/store/cart/store.ts';
+import { Link } from '@tanstack/react-router';
 
 export default function Header() {
   const theme = useTheme();
-  const navigation = useNavigate();
   const itemsInCart = useCartStore((state) => state.items)?.length;
 
   return (
@@ -19,11 +18,9 @@ export default function Header() {
       <Container maxWidth="xl">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Stack
-            direction="row"
-            gap={1}
-            alignItems="center"
-            onClick={() => navigation('/')}
-            sx={{ cursor: 'pointer' }}
+            component={Link}
+            to="/"
+            sx={{ cursor: 'pointer', alignItems: 'center', flexDirection: 'row', gap: 1 }}
           >
             <FlowerIcon size={32} color={theme.palette.accent} />
             <Typography
@@ -40,7 +37,8 @@ export default function Header() {
           <Stack direction="row" gap={1} alignItems="center">
             <Box>
               <Button
-                onClick={() => navigation('/cart')}
+                component={Link}
+                to="/cart"
                 variant="text"
                 aria-label="Open cart"
                 startIcon={

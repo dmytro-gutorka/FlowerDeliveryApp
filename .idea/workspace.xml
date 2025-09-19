@@ -5,20 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0852908-14fc-4150-a79b-03cb79ca3282" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0/storage_v2/_src_/database/flower_db.4hTspg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5df93cc7-6188-4caf-9a5c-86f40b0677f0/storage_v2/_src_/database/flower_db.4hTspg/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/20250917170308_init/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/prisma/migrations/migration_lock.toml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppLayout/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppLayout/AppLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LikeButton/LikeButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LikeButton/LikeButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/router.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppLayout/AppLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppLayout/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationArrowButton/NavigationArrowButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationArrowButton/NavigationArrowButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useCartView.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderForm/OrderForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderForm/OrderForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routeTree.gen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routeTree.gen.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/__root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/__root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/about.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/main.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +142,8 @@
       <workItem from="1758066995887" duration="1391000" />
       <workItem from="1758097792083" duration="5107000" />
       <workItem from="1758107487183" duration="31485000" />
-      <workItem from="1758206001197" duration="7753000" />
+      <workItem from="1758206001197" duration="7785000" />
+      <workItem from="1758292197608" duration="1544000" />
     </task>
     <servers />
   </component>

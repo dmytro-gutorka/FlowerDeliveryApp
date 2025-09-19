@@ -1,6 +1,5 @@
 import type { OrderFormInputs } from '../../zod-validations/order-form.ts';
 import { Controller } from 'react-hook-form';
-import { useNavigate } from 'react-router';
 import { Button, Stack, TextField, useTheme } from '@mui/material';
 import { SERVER_URL } from '../../app/constants.ts';
 import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
@@ -9,6 +8,7 @@ import Box from '@mui/material/Box';
 import OrderInfo from '../OrderInfo';
 import useOrderForm from '../../hooks/useOrderForm.ts';
 import { useCartStore } from '../../app/store/cart/store.ts';
+import { useNavigate } from '@tanstack/react-router';
 
 export function OrderForm() {
   const {
@@ -18,8 +18,8 @@ export function OrderForm() {
     formState: { errors, isDirty, isValid },
   } = useOrderForm();
 
-  const navigation = useNavigate();
   const clearCart = useCartStore((state) => state.actions.clearCart);
+  const navigate = useNavigate();
 
   const createOrder = async (data: OrderFormInputs) => {
     const res = await fetch(`${SERVER_URL}/api/v1/orders`, {
@@ -30,7 +30,7 @@ export function OrderForm() {
     });
 
     const order = await res.json();
-    await navigation(`/orders/${order.id}`);
+    await navigate(`/orders/${order.id}`);
 
     clearCart();
   };
@@ -39,7 +39,7 @@ export function OrderForm() {
 
   return (
     <Box
-      onSubmit={handleSubmit(createOrder)}
+      onSubmit={() => handleSubmit(createOrder)}
       component="form"
       minWidth={theme.spacing(30)}
       borderRadius={theme.shape.borderRadiusScale.sm}
